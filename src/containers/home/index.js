@@ -14,10 +14,12 @@ import {
   Row,
   Col
 } from 'react-bootstrap'
+import './index'
 
 
 
 const thing = false;
+
 const Home = props => (
   <Grid>
     <Row className="show-grid">
