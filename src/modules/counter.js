@@ -18,6 +18,7 @@ export default (state = initialState, action) => {
       }
 
     case INCREMENT:
+    console.log("here")
       return {
         ...state,
         count: state.count + 1,

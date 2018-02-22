@@ -17,15 +17,12 @@ import {
 import './index'
 
 
-
-const thing = false;
-
 const Home = props => (
   <Grid>
     <Row className="show-grid">
       <Col xs={4} md={3}>
         <form>
-          <FieldGroup id="formControlsText" type="text" label="Problem #1" placeholder="Enter Problem"/>
+          <FieldGroup id="problem1" onChange={props.increment} type="text" label="Problem #1" placeholder="Enter Problem"/>
         </form>
       </Col>
       <Col xs={4} md={3}>
@@ -37,24 +34,22 @@ const Home = props => (
       </Col>
     </Row>
     <Row className="show-grid">
-      <Col xs={18} md={12}>
+      <Col xs={9} md={6}>
         <form>
-          <FieldGroup id="formControlsText2" type="text" label="Differential Item" placeholder="Enter text"/>
+          <FieldGroup id="diagnosis1" type="text" label="Diagnosis #1" placeholder="Enter text"/>
         </form>
       </Col>
     </Row>
     <Row className="show-grid">
       <Col xs={9} md={6}>
-        <FormGroup controlId="formControlsTextarea">
-          <ControlLabel>Support</ControlLabel>
-          <FormControl componentClass="textarea" placeholder="textarea"/>
-        </FormGroup>
+        <form>
+            <FieldGroup id="support" type="text" label="Supporting Clinical Features" placeholder="additional features"/>
+        </form>
       </Col>
       <Col xs={9} md={6}>
-        <FormGroup controlId="formControlsTextarea2">
-          <ControlLabel>Contra</ControlLabel>
-          <FormControl componentClass="textarea" placeholder="textarea"/>
-        </FormGroup>
+        <form>
+            <FieldGroup id="contra" type="text" label="Contradictory Clinical Features" placeholder="additional features"/>
+        </form>
       </Col>
     </Row>
   </Grid>
@@ -74,7 +69,11 @@ function FieldGroup({
   );
 }
 
-const mapStateToProps = state => ({count: state.counter.count, isIncrementing: state.counter.isIncrementing, isDecrementing: state.counter.isDecrementing})
+const mapStateToProps = state => ({
+    count: state.counter.count,
+    isIncrementing: state.counter.isIncrementing,
+    isDecrementing: state.counter.isDecrementing
+})
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   increment,
