@@ -14,6 +14,10 @@ export default {
             'rebound tenderness',
             'diarrhea',
             'constipation'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     colorectal_cancer :{
@@ -49,6 +53,10 @@ export default {
             'diarrhea',
             'malaise',
             'low grade fever'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
      },
     inflammatory_bowel_disease :{
@@ -81,6 +89,10 @@ export default {
             'nausea',
             'anorexia',
             'history of antibiotic therapy'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     ischemic_colitis :{
@@ -117,6 +129,10 @@ export default {
             'pain following intercourse',
             'sharp pain',
             'pain following exercise'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     ectopic_pregnancy :{
@@ -131,6 +147,10 @@ export default {
             'breast tenderness',
             'frequent urination',
             'nausea'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     cystitis :{
@@ -143,6 +163,10 @@ export default {
             'suprapubic pain',
             'gross hematuria',
             'new incontinence'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     nephrolithiasis :{
@@ -169,6 +193,10 @@ export default {
             'abdominal pain',
             'metabolic acidosis',
             'normal abdominal exam'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     angiodysplasia :{
@@ -188,6 +216,10 @@ export default {
             'vomiting',
             'unilateral pain',
             'abdominal pain'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     pelvic_inflammatory_disease :{
@@ -199,6 +231,10 @@ export default {
             'bilateral pain',
             'fever',
             'abnormal uterine bleeding'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     endometriosis :{
@@ -215,6 +251,10 @@ export default {
             'abnormal uterine bleeding',
             'low back pain',
             'chronic fatigue'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     chronic_mesenteric_ischemia:{
@@ -223,6 +263,10 @@ export default {
         symptoms : [
             'pain with meals',
             'weight loss'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     splenic_infarction:{
@@ -235,6 +279,10 @@ export default {
             'nausea',
             'vomiting',
             'splenomegaly'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     toxic_megacolon :{
@@ -247,6 +295,10 @@ export default {
             'abdominal pain',
             'abdominal distention',
             'lower abdominal tenderness'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
     },
     interstitial_cystitis :{
@@ -261,193 +313,271 @@ export default {
             'urinary frequency',
             'urinary urgency',
             'nocturia'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
         ]
    },
     irritable_bowel_syndrome :{
-    id : 0021,
-    displayName : 'irritable bowel syndrome',
-    symptoms : [
-        'chronic abdominal pain',
- ' worsening of pain with defecation',
-  'relief with defecation',
-   'emotional stress',
-    'bloating',
-     'flatulence'
- },
+        id : 0021,
+        displayName : 'irritable bowel syndrome',
+        symptoms : [
+            'chronic abdominal pain',
+            ' worsening of pain with defecation',
+            'relief with defecation',
+            'emotional stress',
+            'bloating',
+            'flatulence'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     abdominal_aortic_aneurysm :{
-    id : 0022,
-    displayName : 'abdominal aortic aneurysm',
-    symptoms : [
-        'abdominal pain',
- 'back pain',
-  'flank pain',
-   'fever',
-    'malaise',
-     'severe pain',
-      'pulsatile mass',
-       'hypotension'
-   },
+        id : 0022,
+        displayName : 'abdominal aortic aneurysm',
+        symptoms : [
+            'abdominal pain',
+            'back pain',
+            'flank pain',
+            'fever',
+            'malaise',
+            'severe pain',
+            'pulsatile mass',
+            'hypotension'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     perforation_of_peptic_ulcer:{
-    id : 0023,
-    displayName : 'perforation of peptic ulcer',
-    symptoms : [
-        'severe pain',
- 'diffuse pain',
-  'abdominal pain},
+        id : 0023,
+        displayName : 'perforation of peptic ulcer',
+        symptoms : [
+            'severe pain',
+            'diffuse pain',
+            'abdominal pain'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    }
     small_bowel_obstruction :{
-    id : 0024,
-    displayName : 'small bowel obstruction',
-    symptoms : [
-        'abdominal distention',
- 'vomiting',
-  'crampy abdominal pain',
-   'absence of flatus',
-    'nausea',
-     'vomiting',
-      'periumbilical pain',
-       'paroxysmal pain',
-        'previous surgery']
+        id : 0024,
+        displayName : 'small bowel obstruction',
+        symptoms : [
+            'abdominal distention',
+            'vomiting',
+            'crampy abdominal pain',
+            'absence of flatus',
+            'nausea',
+            'vomiting',
+            'periumbilical pain',
+            'paroxysmal pain',
+            'previous surgery'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
     },
     volvulus :{
-    id : 0025,
-    displayName : 'volvulus',
-    symptoms : [
-        'abdominal pain',
- 'nausea',
-  'vomiting',
-   'obstipation',
-    'colicky pain',
-     'abdominal distension',
-      'fever',
-       'constipation'
-   },
+        id : 0025,
+        displayName : 'volvulus',
+        symptoms : [
+            'abdominal pain',
+            'nausea',
+            'vomiting',
+            'obstipation',
+            'colicky pain',
+            'abdominal distension',
+            'fever',
+            'constipation'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     splenic_rupture :{
-    id : 0026,
-    displayName : 'splenic rupture',
-    symptoms : [
-        'left upper quadrant abdominal pain',
- 'left chest wall pain',
-  'left shoulder pain},
+        id : 0026,
+        displayName : 'splenic rupture',
+        symptoms : [
+            'left upper quadrant abdominal pain',
+            'left chest wall pain',
+            'left shoulder pain'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     peptic_ulcer_disease :{
-    id : 0027,
-    displayName : 'peptic ulcer disease',
-    symptoms : [
-        'epigastric pain',
- 'indigestion',
-  'upper abdominal pain',
-   'upper abdominal discomfort',
-    'pain radiating to back',
-     'postprandial pain',
-      'epigastric fullness',
-       'early satiety',
-        'postprandial belching',
-         'early satiety',
-          'nausea',
-           'vomiting'
-       },
+        id : 0027,
+        displayName : 'peptic ulcer disease',
+        symptoms : [
+            'epigastric pain',
+            'indigestion',
+            'upper abdominal pain',
+            'upper abdominal discomfort',
+            'pain radiating to back',
+            'postprandial pain',
+            'epigastric fullness',
+            'early satiety',
+            'postprandial belching',
+            'early satiety',
+            'nausea',
+            'vomiting'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     splenic_abscess:{
-    id : 0028,
-    displayName : 'splenic abscess',
-    symptoms : [
-        'fever',
- 'tenderness in left upper quadrant'] },
+        id : 0028,
+        displayName : 'splenic abscess',
+        symptoms : [
+            'fever',
+            'tenderness in left upper quadrant'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     acute_cholecystitis :{
-    id : 0029,
-    displayName : 'acute cholecystitis',
-    symptoms : [
-        'abdominal pain',
- 'pain radiating to right shoulder',
-  'pain radiating to back',
-   'severe pain',
-    'constant pain',
-     'nausea',
-      'vomiting',
-       'anorexia',
-        'fatty food ingestion',
-         'fever',
-          'right upper quadrant pain'
-      },
+        id : 0029,
+        displayName : 'acute cholecystitis',
+        symptoms : [
+            'abdominal pain',
+            'pain radiating to right shoulder',
+            'pain radiating to back',
+            'severe pain',
+            'constant pain',
+            'nausea',
+            'vomiting',
+            'anorexia',
+            'fatty food ingestion',
+            'fever',
+            'right upper quadrant pain'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     pancreatitis :{
-    id : 0030,
-    displayName : 'pancreatitis',
-    symptoms : [
-        'upper abdominal pain',
- 'steady pain',
-  'pain radiating to back',
-   'nausea',
-    'vomiting',
-     'abdominal distention',
-      'guarding',
-       'alcoholism'
-   },
+        id : 0030,
+        displayName : 'pancreatitis',
+        symptoms : [
+            'upper abdominal pain',
+            'steady pain',
+            'pain radiating to back',
+            'nausea',
+            'vomiting',
+            'abdominal distention',
+            'guarding',
+            'alcoholism'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     incarcerated_hernia :{
-    id : 0031,
-    displayName : 'incarcerated hernia',
-    symptoms : [
-        'mild pain',
- 'lower abdominal pain',
-  'pain exacerbated by straining},
+        id : 0031,
+        displayName : 'incarcerated hernia',
+        symptoms : [
+            'mild pain',
+            'lower abdominal pain',
+            'pain exacerbated by straining
+        ]
+    },
     foodborne_disease :{
-    id : 0032,
-    displayName : 'foodborne disease',
-    symptoms : [
-        'nausea',
- 'vomiting',
-  'fever',
-   'abdominal pain',
-    'diarrhea'
-},
+        id : 0032,
+        displayName : 'foodborne disease',
+        symptoms : [
+            'nausea',
+            'vomiting',
+            'fever',
+            'abdominal pain',
+            'diarrhea'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     hepatitis_A:{
-    id : 0033,
-    displayName : 'hepatitis A',
-    symptoms : [
-        'acute onset',
- 'nausea',
-  'vomiting',
-   'anorexia',
-    'fever',
-     'malaise',
-      'abdominal pain',
-       'dark urine',
-        'pale stools',
-         'jaundice',
-          'pruritus',
-           'fever',
+        id : 0033,
+        displayName : 'hepatitis A',
+        symptoms : [
+            'acute onset',
+            'nausea',
+            'vomiting',
+            'anorexia',
+            'fever',
+            'malaise',
+            'abdominal pain',
+            'dark urine',
+            'pale stools',
             'jaundice',
-             'scleral icterus',
-              'abdominal pain'},
+            'pruritus',
+            'fever',
+            'jaundice',
+            'scleral icterus',
+            'abdominal pain'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
     diabetic_ketoacidosis :{
-    id : 0034,
-    displayName : 'diabetic ketoacidosis',
-    symptoms : [
-        'polyuria',
- 'polydipsia',
-  'weight loss',
-   'lethargy',
-    'obtundation',
-     'hyperventilation',
-      'abdominal pain',
-       'nausea',
-        'vomiting',
-         'dry oral mucosa',
-          'decreased skin turgor',
-           'dry axillae'
-       },
-
-
-{alcoholic_ketoacidosis :{
-    id : 0035,
-    displayName : 'alcoholic ketoacidosis',
-    symptoms : [
-        'chronic alcohol abuse',
- 'malnutrition',
-  'recent episode of binge drinking',
-   'nausea',
-    'vomiting',
-     'abdominal pain',
-      'diffuse abdominal pain',
-       'alert',
-        'lucid'
+        id : 0034,
+        displayName : 'diabetic ketoacidosis',
+        symptoms : [
+            'polyuria',
+            'polydipsia',
+            'weight loss',
+            'lethargy',
+            'obtundation',
+            'hyperventilation',
+            'abdominal pain',
+            'nausea',
+            'vomiting',
+            'dry oral mucosa',
+            'decreased skin turgor',
+            'dry axillae'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
+    },
+    alcoholic_ketoacidosis :{
+        id : 0035,
+        displayName : 'alcoholic ketoacidosis',
+        symptoms : [
+            'chronic alcohol abuse',
+            'malnutrition',
+            'recent episode of binge drinking',
+            'nausea',
+            'vomiting',
+            'abdominal pain',
+            'diffuse abdominal pain',
+            'alert',
+            'lucid'
+        ],
+        contradictorySymptoms : [
+            'symptom',
+            'symptom'
+        ]
     }
 }
 
