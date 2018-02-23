@@ -1,7 +1,6 @@
-export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
+import data from '../data'
 export const INCREMENT = 'counter/INCREMENT'
-export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
-export const DECREMENT = 'counter/DECREMENT'
+export const DIAGNOSIS_CHANGE= 'diagnosis_change'
 
 const initialState = {
   count: 0,
@@ -11,31 +10,18 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT_REQUESTED:
-      return {
-        ...state,
-        isIncrementing: true
-      }
 
     case INCREMENT:
-    console.log("here")
       return {
         ...state,
         count: state.count + 1,
         isIncrementing: !state.isIncrementing
       }
 
-    case DECREMENT_REQUESTED:
+    case DIAGNOSIS_CHANGE:
       return {
         ...state,
-        isDecrementing: true
-      }
-
-    case DECREMENT:
-      return {
-        ...state,
-        count: state.count - 1,
-        isDecrementing: !state.isDecrementing
+        diagnosis: action.payload
       }
 
     default:
@@ -46,51 +32,17 @@ export default (state = initialState, action) => {
 export const increment = () => {
   return dispatch => {
     dispatch({
-      type: INCREMENT_REQUESTED
-    })
-
-    dispatch({
       type: INCREMENT
     })
   }
 }
 
-export const incrementAsync = () => {
-  return dispatch => {
-    dispatch({
-      type: INCREMENT_REQUESTED
-    })
+export const diagnosisChange = (payload) => {
+  console.log(data.diverticulitis.displayName)
 
-    return setTimeout(() => {
-      dispatch({
-        type: INCREMENT
-      })
-    }, 3000)
-  }
-}
-
-export const decrement = () => {
-  return dispatch => {
-    dispatch({
-      type: DECREMENT_REQUESTED
-    })
-
-    dispatch({
-      type: DECREMENT
-    })
-  }
-}
-
-export const decrementAsync = () => {
-  return dispatch => {
-    dispatch({
-      type: DECREMENT_REQUESTED
-    })
-
-    return setTimeout(() => {
-      dispatch({
-        type: DECREMENT
-      })
-    }, 3000)
+  const clinicalFeatures = 1
+  return {
+    type: DIAGNOSIS_CHANGE,
+    payload
   }
 }
