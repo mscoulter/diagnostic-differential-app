@@ -2,7 +2,7 @@ import React from 'react'
 import {push} from 'react-router-redux'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {diagnosisChange, increment} from './homeActions.js'
+import {diagnosisChange} from './homeActions.js'
 import Form, { Input, Fieldset } from 'react-bootstrap-form'
 import {
   Button,
@@ -84,15 +84,13 @@ function FieldGroup({
 
 const mapStateToProps = state => ({
     diagnosis: state.diagnosis,
-    count: state.homeReducer.count,
-    isIncrementing: state.homeReducer.isIncrementing,
-    isDecrementing: state.homeReducer.isDecrementing
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   diagnosisChange,
-  increment,
   changePage: () => push('/about-us')
 }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps)(Home)
