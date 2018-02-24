@@ -7,7 +7,7 @@ const Navigation = props => (
   <Navbar inverse collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
-        <NavLink to="/">DaddyNostix</NavLink>
+        <NavLink to="/">Diagnostic Differentials</NavLink>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>

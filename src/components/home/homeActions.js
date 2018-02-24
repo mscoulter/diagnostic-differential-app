@@ -1,4 +1,4 @@
-import data from '../data'
+import data from '../../data'
 export const INCREMENT = 'counter/INCREMENT'
 export const DIAGNOSIS_CHANGE= 'diagnosis_change'
 

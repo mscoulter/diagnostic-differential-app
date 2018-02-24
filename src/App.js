@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
-import Home from '../home'
-import About from '../about/about_us'
-import Contact from '../contact/contact_info'
-import Navigation from '../Navigation'
+import Home from './components/home'
+import About from './components/about/about_us'
+import Contact from './components/contact/contact_info'
+import Navigation from './components/navbar/Navigation'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
