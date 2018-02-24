@@ -3,6 +3,7 @@ import {push} from 'react-router-redux'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {diagnosisChange, increment} from '../../modules/counter'
+import Form, { Input, Fieldset } from 'react-bootstrap-form'
 import {
   Button,
   ButtonToolbar,
@@ -45,6 +46,7 @@ const Home = props => (
         <form>
           <FieldGroup
             id="diagnosis1"
+            value={props.Diagnosis}
             onChange={diagnosisChange}
             type="text"
             label="Diagnosis #1"
@@ -81,6 +83,7 @@ function FieldGroup({
 }
 
 const mapStateToProps = state => ({
+    diagnosis: state.diagnosis,
     count: state.counter.count,
     isIncrementing: state.counter.isIncrementing,
     isDecrementing: state.counter.isDecrementing

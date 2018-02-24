@@ -1,6 +1,6 @@
 export default {
     diverticulitis : {
-        id : 0001,
+        id : '0001',
         displayName : 'diverticulitis',
         symptoms : [
             'left lower quadrant pain',
@@ -21,7 +21,7 @@ export default {
         ]
     },
     colorectal_cancer :{
-        id : 0002,
+        id : '0002',
         displayName : 'colorectal cancer',
         symptoms : [
             'hematochezia',
@@ -39,7 +39,7 @@ export default {
          ]
      },
     acute_appendicitis:{
-        id : 0003,
+        id : '0003',
         displayName : 'acute appendicitis',
         symptoms : [
             'right lower quadrant abdominal pain',
@@ -60,7 +60,7 @@ export default {
         ]
      },
     inflammatory_bowel_disease :{
-        id : 0004,
+        id : '0004',
         displayName : 'inflammatory bowel disease',
         symptoms : [
             'diarrhea',
@@ -79,7 +79,7 @@ export default {
             'anemia']
      },
     clostridium_difficile_colitis :{
-        id   : 0005,
+        id   : '0005',
         displayName : 'clostridium difficile colitis',
         symptoms : [
             'watery diarrhea',
@@ -96,7 +96,7 @@ export default {
         ]
     },
     ischemic_colitis :{
-        id : 0006,
+        id : '0006',
         displayName : 'ischemic colitis',
         symptoms : [
             'abdominal pain',
@@ -106,8 +106,8 @@ export default {
             'hematochezia'
          ]
     },
-    tubo-ovarian_abscess :{
-        id : 0007,
+    tubo_ovarian_abscess :{
+        id : '0007',
         displayName : 'tubo-ovarian abscess',
         symptoms : [
             'acute pain',
@@ -119,7 +119,7 @@ export default {
          ]
      },
     ruptured_ovarian_cyst :{
-        id : 0008,
+        id : '0008',
         displayName : 'ruptured ovarian cyst',
         symptoms : [
             'sudden onset',
@@ -136,7 +136,7 @@ export default {
         ]
     },
     ectopic_pregnancy :{
-        id : 0009,
+        id : '0009',
         displayName : 'ectopic pregnancy',
         symptoms : [
             'vaginal bleeding',
@@ -154,7 +154,7 @@ export default {
         ]
     },
     cystitis :{
-        id : 0010,
+        id : '0010',
         displayName : 'cystitis',
         symptoms : [
             'acute dysuria',
@@ -170,7 +170,7 @@ export default {
         ]
     },
     nephrolithiasis :{
-        id : 0011,
+        id : '0011',
         displayName : 'nephrolithiasis',
         symptoms : [
             'paroxysmal pain',
@@ -186,7 +186,7 @@ export default {
          ]
     },
     acute_mesenteric_ischemia :{
-        id : 0012,
+        id : '0012',
         displayName : 'acute mesenteric ischemia',
         symptoms : [
             'acute onset',
@@ -200,16 +200,16 @@ export default {
         ]
     },
     angiodysplasia :{
-        id : 0013,
+        id : '0013',
         displayName : 'angiodysplasia',
         symptoms : [
             'chronic hematochezia',
             'recurrent hematochezia',
-            'hematochezia},
+            'hematochezia',
         ]
     },
     adnexal_torsion :{
-        id : 0014,
+        id : '0014',
         displayName : 'adnexal torsion',
         symptoms : [
             'nausea',
@@ -223,7 +223,7 @@ export default {
         ]
     },
     pelvic_inflammatory_disease :{
-        id : 0015,
+        id : '0015',
         displayName : 'pelvic inflammatory disease',
         symptoms : [
             'lower abdominal pain',
@@ -238,7 +238,7 @@ export default {
         ]
     },
     endometriosis :{
-        id : 0016,
+        id : '0016',
         displayName : 'endometriosis',
         symptoms : [
             'pelvic pain',
@@ -258,7 +258,7 @@ export default {
         ]
     },
     chronic_mesenteric_ischemia:{
-        id : 0017,
+        id : '0017',
         displayName : 'chronic mesenteric ischemia',
         symptoms : [
             'pain with meals',
@@ -270,7 +270,7 @@ export default {
         ]
     },
     splenic_infarction:{
-        id : 0018,
+        id : '0018',
         displayName : 'splenic infarction',
         symptoms : [
             'severe left upper quadrant pain',
@@ -286,7 +286,7 @@ export default {
         ]
     },
     toxic_megacolon :{
-        id : 0019,
+        id : '0019',
         displayName : 'toxic megacolon',
         symptoms : [
             'severe diarrhea',
@@ -302,7 +302,7 @@ export default {
         ]
     },
     interstitial_cystitis :{
-        id : 0020,
+        id : '0020',
         displayName : 'interstitial cystitis',
         symptoms : [
             'pelvic tenderness',
@@ -320,7 +320,7 @@ export default {
         ]
    },
     irritable_bowel_syndrome :{
-        id : 0021,
+        id : '0021',
         displayName : 'irritable bowel syndrome',
         symptoms : [
             'chronic abdominal pain',
@@ -336,7 +336,7 @@ export default {
         ]
     },
     abdominal_aortic_aneurysm :{
-        id : 0022,
+        id : '0022',
         displayName : 'abdominal aortic aneurysm',
         symptoms : [
             'abdominal pain',
@@ -354,7 +354,7 @@ export default {
         ]
     },
     perforation_of_peptic_ulcer:{
-        id : 0023,
+        id : '0023',
         displayName : 'perforation of peptic ulcer',
         symptoms : [
             'severe pain',
@@ -365,9 +365,9 @@ export default {
             'symptom',
             'symptom'
         ]
-    }
+    },
     small_bowel_obstruction :{
-        id : 0024,
+        id : '0024',
         displayName : 'small bowel obstruction',
         symptoms : [
             'abdominal distention',
@@ -386,7 +386,7 @@ export default {
         ]
     },
     volvulus :{
-        id : 0025,
+        id : '0025',
         displayName : 'volvulus',
         symptoms : [
             'abdominal pain',
@@ -404,7 +404,7 @@ export default {
         ]
     },
     splenic_rupture :{
-        id : 0026,
+        id : '0026',
         displayName : 'splenic rupture',
         symptoms : [
             'left upper quadrant abdominal pain',
@@ -417,7 +417,7 @@ export default {
         ]
     },
     peptic_ulcer_disease :{
-        id : 0027,
+        id : '0027',
         displayName : 'peptic ulcer disease',
         symptoms : [
             'epigastric pain',
@@ -439,7 +439,7 @@ export default {
         ]
     },
     splenic_abscess:{
-        id : 0028,
+        id : '0028',
         displayName : 'splenic abscess',
         symptoms : [
             'fever',
@@ -451,7 +451,7 @@ export default {
         ]
     },
     acute_cholecystitis :{
-        id : 0029,
+        id : '0029',
         displayName : 'acute cholecystitis',
         symptoms : [
             'abdominal pain',
@@ -472,7 +472,7 @@ export default {
         ]
     },
     pancreatitis :{
-        id : 0030,
+        id : '0030',
         displayName : 'pancreatitis',
         symptoms : [
             'upper abdominal pain',
@@ -490,16 +490,16 @@ export default {
         ]
     },
     incarcerated_hernia :{
-        id : 0031,
+        id : '0031',
         displayName : 'incarcerated hernia',
         symptoms : [
             'mild pain',
             'lower abdominal pain',
-            'pain exacerbated by straining
+            'pain exacerbated by straining'
         ]
     },
     foodborne_disease :{
-        id : 0032,
+        id : '0032',
         displayName : 'foodborne disease',
         symptoms : [
             'nausea',
@@ -514,7 +514,7 @@ export default {
         ]
     },
     hepatitis_A:{
-        id : 0033,
+        id : '0033',
         displayName : 'hepatitis A',
         symptoms : [
             'acute onset',
@@ -539,7 +539,7 @@ export default {
         ]
     },
     diabetic_ketoacidosis :{
-        id : 0034,
+        id : '0034',
         displayName : 'diabetic ketoacidosis',
         symptoms : [
             'polyuria',
@@ -561,7 +561,7 @@ export default {
         ]
     },
     alcoholic_ketoacidosis :{
-        id : 0035,
+        id : '0035',
         displayName : 'alcoholic ketoacidosis',
         symptoms : [
             'chronic alcohol abuse',
@@ -580,4 +580,3 @@ export default {
         ]
     }
 }
-

@@ -38,7 +38,16 @@ export const increment = () => {
 }
 
 export const diagnosisChange = (payload) => {
-  console.log(data.diverticulitis.displayName)
+  const input = payload.target.value
+  const formattedInput = input.replace(/\s+/g,"_").replace(/'/g,'');
+  console.log(formattedInput)
+
+  return dispatch => {
+    dispatch({
+      type: DIAGNOSIS_CHANGE,
+
+    })
+  }
 
   const clinicalFeatures = 1
   return {

@@ -4,7 +4,7 @@
 <
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 K
-src/containers/app/index.js,7/b/7bff5e4347a90fc7c22035aaf45d9a2488c674c3
+src/containers/app.js,7/b/7bff5e4347a90fc7c22035aaf45d9a2488c674c3
 D
 src/modules/index.js,5/1/519b493399ffc5b90688ea0d602bf9988dbe0ff7
 D
