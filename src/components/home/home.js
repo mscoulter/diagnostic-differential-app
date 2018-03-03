@@ -1,9 +1,4 @@
 import React from 'react'
-import {push} from 'react-router-redux'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
-import {diagnosisChange} from './homeActions.js'
-import Form, { Input, Fieldset } from 'react-bootstrap-form'
 import {
   Button,
   ButtonToolbar,
@@ -13,12 +8,13 @@ import {
   ControlLabel,
   Grid,
   Row,
-  Col
+  Col,
+  ListGroup,
+  ListGroupItem
 } from 'react-bootstrap'
-import './index'
 
-
-const Home = props => (
+export const Home = props => {
+return (
   <Grid>
     <Row className="show-grid">
       <Col xs={4} md={3}>
@@ -47,7 +43,7 @@ const Home = props => (
           <FieldGroup
             id="diagnosis1"
             value={props.Diagnosis}
-            onChange={diagnosisChange}
+            onChange={props.diagnosisChange}
             type="text"
             label="Diagnosis #1"
             placeholder="Enter text"/>
@@ -55,7 +51,15 @@ const Home = props => (
       </Col>
     </Row>
     <Row className="show-grid">
-      <Col xs={6} md={2}></Col>
+      {props.clinical_features &&
+      <Col xs={6} md={2}>
+        <ListGroup>
+          {props.clinical_features.map((feature)=>{
+            return <ListGroupItem>{feature}</ListGroupItem>
+          })}
+        </ListGroup>
+      </Col>
+      }
       <Col xs={9} md={6}>
         <form>
             <FieldGroup id="support"
@@ -67,6 +71,7 @@ const Home = props => (
     </Row>
   </Grid>
 )
+}
 
 function FieldGroup({
   id,
@@ -81,16 +86,3 @@ function FieldGroup({
     </FormGroup>
   );
 }
-
-const mapStateToProps = state => ({
-    diagnosis: state.diagnosis,
-})
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  diagnosisChange,
-  changePage: () => push('/about-us')
-}, dispatch)
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps)(Home)
