@@ -7,21 +7,37 @@ import {Home} from './home';
 
 
 class HomeContainer extends React.Component {
-  // this.state = { comments: [] };
+
+  constructor(props) {
+   super(props);
+   this.state = { displayDiff: false };
+   this.toggleDisplay = this.toggleDisplay.bind(this);
+ }
+
 
   componentDidMount() {
 
   }
+
+  toggleDisplay = () => {
+    console.log("HEREREERER")
+    const toggled = !this.state.displayDiff;
+    return this.setState({displayDiff: toggled});
+  }
+
   render() {
     return <Home
-      clinical_features={this.props.clinical_features}
+      displayDiff={this.state.displayDiff}
+      onDiagnosisChange={this.props.diagnosisChange}
+      toggleDisplay={this.toggleDisplay}
+      clinicalFeatures={this.props.clinicalFeatures}
       diagnosisChange={this.props.diagnosisChange}/>
   }
 };
 
 const mapStateToProps = state => {
   return {
-    clinical_features: state.homeReducer.clinical_features,
+    clinicalFeatures: state.homeReducer.clinical_features,
   }
 }
 

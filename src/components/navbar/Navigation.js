@@ -1,27 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react'
 import {Route, Link, NavLink} from 'react-router-dom'
-import {Navbar, NavItem, MenuItem, Nav, NavDropdown} from 'react-bootstrap'
+import { Menu } from 'semantic-ui-react'
 
+export default class Navigation extends Component {
+  state = {activeItem : 'home'}
 
-const Navigation = props => (
-  <Navbar inverse collapseOnSelect>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <NavLink to="/">Diagnostic Differentials</NavLink>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-    </Navbar.Header>
-    <Navbar.Collapse>
-      <Nav>
-        <NavItem eventKey={1}>
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  render() {
+    const { activeItem } = this.state
+
+    return (
+      <Menu>
+        <Menu.Item
+          name='home'
+          active={activeItem === 'home'}
+          onClick={this.handleItemClick}
+        >
+          <NavLink to="/">Diagnostic Differentials</NavLink>
+        </Menu.Item>
+
+        <Menu.Item
+          name='about'
+          active={activeItem === 'about'}
+          onClick={this.handleItemClick}
+        >
           <NavLink to="/about"> About </NavLink>
-        </NavItem>
-        <NavItem eventKey={2}>
-          <NavLink to="/contact">Contact</NavLink>
-        </NavItem>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-);
+        </Menu.Item>
 
-export default Navigation;
+        <Menu.Item
+          name='upcomingEvents'
+          active={activeItem === 'upcomingEvents'}
+          onClick={this.handleItemClick}
+        >
+          <NavLink to="/contact">Contact</NavLink>
+        </Menu.Item>
+      </Menu>
+    )
+  }
+}

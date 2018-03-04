@@ -5,6 +5,7 @@ import {formatText} from '../helpers/formatHelper'
 export const DIAGNOSIS_CHANGE= 'diagnosis_change'
 
 export const diagnosisChange = (payload) => {
+  console.log("hereewwefw")
   const cleanText = formatText(payload.target.value);
   let symptoms;
   if(data[cleanText]){
