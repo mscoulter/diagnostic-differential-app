@@ -20,7 +20,6 @@ class HomeContainer extends React.Component {
   }
 
   toggleDisplay = () => {
-    console.log("HEREREERER")
     const toggled = !this.state.displayDiff;
     return this.setState({displayDiff: toggled});
   }
