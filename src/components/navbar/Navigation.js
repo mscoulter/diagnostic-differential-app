@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import {Route, Link, NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+// import {browserHistory} from 'react-router';
 import { Menu } from 'semantic-ui-react'
 
 export default class Navigation extends Component {
   state = {activeItem : 'home'}
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => {
+    // browserHistory.push({
+    //   pathname: to});
+    this.setState({ activeItem: name })
+  }
 
   render() {
     const { activeItem } = this.state
@@ -13,27 +18,33 @@ export default class Navigation extends Component {
     return (
       <Menu>
         <Menu.Item
+          as={Link}
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
+          to="/"
         >
-          <NavLink to="/">Diagnostic Differentials</NavLink>
+          Diagnostic Differentials
         </Menu.Item>
 
         <Menu.Item
+          as={Link}
           name='about'
           active={activeItem === 'about'}
           onClick={this.handleItemClick}
+          to="/about"
         >
-          <NavLink to="/about"> About </NavLink>
+         About
         </Menu.Item>
 
         <Menu.Item
+          as={Link}
           name='upcomingEvents'
           active={activeItem === 'upcomingEvents'}
           onClick={this.handleItemClick}
+          to="/contact"
         >
-          <NavLink to="/contact">Contact</NavLink>
+        Contact
         </Menu.Item>
       </Menu>
     )

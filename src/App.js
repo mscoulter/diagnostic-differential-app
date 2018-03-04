@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
-import Home from './components/home/home'
+import { Route} from 'react-router-dom'
 import HomeContainer from './components/home/homeContainer'
 import About from './components/about/about_us'
 import Contact from './components/contact/contact_info'

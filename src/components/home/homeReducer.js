@@ -1,4 +1,3 @@
-import data from '../../data'
 import {DIAGNOSIS_CHANGE} from './homeActions'
 
 const initialState = {}
@@ -9,7 +8,8 @@ export default (state = initialState, action) => {
     case DIAGNOSIS_CHANGE:
       return {
         ...state,
-        clinical_features: action.payload
+        clinicalFeatures: action.payload.clinicalFeatures,
+        diagnosis: action.payload.diagnosis
       }
 
     default:

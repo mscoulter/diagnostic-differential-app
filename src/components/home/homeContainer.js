@@ -20,23 +20,26 @@ class HomeContainer extends React.Component {
   }
 
   toggleDisplay = () => {
-    const toggled = !this.state.displayDiff;
-    return this.setState({displayDiff: toggled});
+    return this.setState({displayDiff: !this.state.displayDiff});
   }
 
   render() {
     return <Home
+      addDiagnosis={this.addDiagnosis}
+      clinicalFeatures={this.props.clinicalFeatures}
+      diagnosis={this.props.diagnosis}
+      diagnosisChange={this.props.diagnosisChange}
       displayDiff={this.state.displayDiff}
       onDiagnosisChange={this.props.diagnosisChange}
       toggleDisplay={this.toggleDisplay}
-      clinicalFeatures={this.props.clinicalFeatures}
-      diagnosisChange={this.props.diagnosisChange}/>
+      />
   }
 };
 
 const mapStateToProps = state => {
   return {
-    clinicalFeatures: state.homeReducer.clinical_features,
+    clinicalFeatures: state.homeReducer.clinicalFeatures,
+    diagnosis: state.homeReducer.diagnosis,
   }
 }
 
