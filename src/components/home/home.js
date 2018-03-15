@@ -1,58 +1,108 @@
 import React from 'react'
 import {
-  Input,
-  Button
+    Accordion,
+    Card,
+    Checkbox,
+    Divider,
+    Form,
+    Grid,
+    Header,
+    Label,
+    List,
+    Segment,
+    Icon,
+    Input,
+    Button
 } from 'semantic-ui-react'
-
 export const Home = ({
-  addDiagnosis,
-  clinicalFeatures,
-  diagnosis,
-  diagnosisChange,
-  displayDiff,
-  toggleDisplay
-}) => {
+                         activeList,
+                         addDiagnosis,
+                         clinicalFeatures,
+                         diagnosis,
+                         diagnosisChange,
+                         displayDiff,
+                         firstOpen,
+                         handleClick,
+                         handleDiagnosisToggle,
+                         relatedDiagnoses,
+                         showDetail,
+                         toggleDisplay
+                     }) => {
 
-  return (
-    <div>
-      <div className="ui grid container">
-        <div className="four wide column">
-          Problem #1
-          <div className="ui action input">
-            <Input type="text" placeholder='Enter Problem...' />
-            <Button onClick={toggleDisplay} className="ui button primary">Develop</Button>
-          </div>
-        </div>
-      </div>
-      {displayDiff &&
-      <div>
-      <div className="ui grid">
-        <div className="two wide column"></div>
-        <div className="six wide column">
-          Diagnosis #1
-          <div className="ui fluid icon input">
-            <input type="text" placeholder="Enter Diagnosis..." value={diagnosis} onChange={diagnosisChange}/>
-          </div>
-          {clinicalFeatures &&
-          <div className="ui celled list">
-            {clinicalFeatures.map(feature=>{
-              return <div className="item">{feature}</div>
-            })}
-          </div>
-          }
-        </div>
-        <div className="six wide column">
-          Related Diagnoses
-          <div className="ui fluid icon input">
-            <input type="text" placeholder="Enter Diagnosis..."/>
-          </div>
-        </div>
-        <div className="two wide column"></div>
-        <div className="two wide column"></div>
-      </div>
-      <Button primary onClick={addDiagnosis}>Add Diagnostic Item</Button>
-      </div>
-      }
-    </div>
-  )
+    const isActive = (index) => {
+        return activeList.filter(item => item === (index)).length > 0;
+    };
+
+    return (
+        <Grid centered>
+            <Grid.Row>
+                <Grid.Column width={14}>
+                    <Accordion exclusive={false} fluid styled>
+                        <Accordion.Title active={isActive(0)}>
+                            <Button icon index={0} onClick={handleClick}>
+                                <Icon name='dropdown'/>
+                            </Button>
+                            <Input type="text" placeholder='Enter Problem #1...'/>
+                        </Accordion.Title>
+                        <Accordion.Content active={isActive(0)}>
+                            <Card fluid>
+                                <Label attached='top'>Diagnosis #1</Label>
+                                <Card.Content>
+                                    <Input type="text"
+                                           placeholder="Enter Diagnosis..."
+                                           value={diagnosis}
+                                           onChange={diagnosisChange}/>
+                                    <Button onClick={toggleDisplay}>Show Detail</Button>
+                                </Card.Content>
+                                {(clinicalFeatures && firstOpen) || showDetail &&
+                                <Card.Content>
+                                    <Header as='h4' textAlign='center'>
+                                        Clinical Features
+                                    </Header>
+                                    <Grid columns={2}>
+                                        <Grid.Column>
+                                            <List celled>
+                                                {clinicalFeatures && clinicalFeatures
+                                                    .splice(0, Math.ceil(clinicalFeatures.length / 2))
+                                                    .map((feature, i) => {
+                                                        return <List.Item>
+                                                            <Checkbox label={feature}/>
+                                                        </List.Item>
+                                                    })}
+                                            </List>
+                                        </Grid.Column>
+                                        <Grid.Column>
+                                            <List celled>
+                                                {clinicalFeatures && clinicalFeatures
+                                                    .splice(Math.floor(clinicalFeatures.length / 2) - (clinicalFeatures.length % 2 === 0 ? 3 : 2), clinicalFeatures.length)
+                                                    .map((feature, i) => {
+                                                        return <List.Item>
+                                                            <Checkbox label={feature}/>
+                                                        </List.Item>
+                                                    })}
+                                            </List>
+                                        </Grid.Column>
+                                    </Grid>
+                                    <Form>
+                                        <Form.TextArea placeholder='Other clinical features...'/>
+                                    </Form>
+                                    <Divider/>
+                                    <Header as='h4' textAlign='center'>
+                                        Related Diagnoses
+                                    </Header>
+                                    {relatedDiagnoses &&
+                                    <Segment>
+                                        {relatedDiagnoses.join(', ')}
+                                    </Segment>
+                                    }
+                                </Card.Content>
+                                }
+                            </Card>
+                        </Accordion.Content>
+                    </Accordion>
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
+
+    )
 }

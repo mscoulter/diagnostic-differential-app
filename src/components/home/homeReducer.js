@@ -1,6 +1,6 @@
 import {DIAGNOSIS_CHANGE} from './homeActions'
 
-const initialState = {}
+const initialState = {};
 
 export default (state = initialState, action) => {
 
@@ -8,9 +8,10 @@ export default (state = initialState, action) => {
     case DIAGNOSIS_CHANGE:
       return {
         ...state,
-        clinicalFeatures: action.payload.clinicalFeatures,
-        diagnosis: action.payload.diagnosis
-      }
+          diagnosis: action.payload.diagnosis,
+          clinicalFeatures: action.payload.clinicalFeatures,
+          relatedDiagnoses: action.payload.relatedDiagnoses,
+      };
 
     default:
       return state
