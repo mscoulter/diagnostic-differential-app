@@ -48,13 +48,20 @@ export const Home = ({
                             <Card fluid>
                                 <Label attached='top'>Diagnosis #1</Label>
                                 <Card.Content>
-                                    <Input type="text"
-                                           placeholder="Enter Diagnosis..."
-                                           value={diagnosis}
-                                           onChange={diagnosisChange}/>
-                                    <Button onClick={toggleDisplay}>Show Detail</Button>
+                                    <Grid columns={2}>
+                                        <Grid.Column>
+                                            <Input type="text"
+                                                   placeholder="Enter Diagnosis..."
+                                                   value={diagnosis}
+                                                   onChange={diagnosisChange}/>
+                                        </Grid.Column>
+                                        <Grid.Column>
+                                            <Button onClick={toggleDisplay} primary
+                                                    size='tiny'>{(clinicalFeatures && firstOpen) || showDetail ? 'Hide' : 'Show'} Detail</Button>
+                                        </Grid.Column>
+                                    </Grid>
                                 </Card.Content>
-                                {(clinicalFeatures && firstOpen) || showDetail &&
+                                {((clinicalFeatures && firstOpen) || showDetail) &&
                                 <Card.Content>
                                     <Header as='h4' textAlign='center'>
                                         Clinical Features

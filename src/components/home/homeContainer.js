@@ -10,15 +10,15 @@ class HomeContainer extends React.Component {
 
   constructor(props) {
    super(props);
-   this.state = { activeList: [] };
+   this.state = { activeList: [], firstOpen: true, showDetail: false };
    this.toggleDisplay = this.toggleDisplay.bind(this);
    this.handleClick = this.handleClick.bind(this);
    this.handleDiagnosisToggle = this.handleDiagnosisToggle.bind(this);
-
  }
 
 
-  componentDidMount() {
+  componentWillMount() {
+
 
   }
 
@@ -33,11 +33,19 @@ class HomeContainer extends React.Component {
   };
 
   toggleDisplay = () => {
-    return this.setState(
-        {
-            firstOpen: false,
-            showDetail: !this.state.showDetail
-        });
+      if (this.state.firstOpen === true && this.props.clinicalFeatures && this.props.clinicalFeatures.length > 0) {
+          return this.setState(
+              {
+                  firstOpen: false,
+                  showDetail: this.state.showDetail
+              });
+      } else {
+          return this.setState(
+              {
+                  firstOpen: false,
+                  showDetail: !this.state.showDetail
+              });
+      }
   };
   handleDiagnosisToggle = () => {
       return this.setState({showClinicalFeatures: !this.state.showClinicalFeatures})
@@ -50,17 +58,16 @@ class HomeContainer extends React.Component {
       clinicalFeatures={this.props.clinicalFeatures}
       diagnosis={this.props.diagnosis}
       diagnosisChange={this.props.diagnosisChange}
-      // displayDiff={this.state.displayDiff}
+      firstOpen={this.state.firstOpen}
       handleClick={this.handleClick}
       handleDiagnosisToggle={this.handleDiagnosisToggle}
       onDiagnosisChange={this.props.diagnosisChange}
       relatedDiagnoses={this.props.relatedDiagnoses}
       showDetail={this.state.showDetail}
-      // showClinicalFeatures={this.state.showClinicalFeatures}
       toggleDisplay={this.toggleDisplay}
       />
   }
-};
+}
 
 const mapStateToProps = state => {
   return {
@@ -68,12 +75,11 @@ const mapStateToProps = state => {
       clinicalFeatures: state.homeReducer.clinicalFeatures,
       relatedDiagnoses: state.homeReducer.relatedDiagnoses,
   }
-}
+};
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   diagnosisChange,
-  changePage: () => push('/about-us')
-}, dispatch)
+}, dispatch);
 
 export default connect(
   mapStateToProps,
