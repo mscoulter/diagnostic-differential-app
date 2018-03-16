@@ -17,6 +17,7 @@ import {
 export const Home = ({
                          activeList,
                          addDiagnosis,
+                         checkBoxes,
                          clinicalFeatures,
                          diagnosis,
                          diagnosisChange,
@@ -33,7 +34,14 @@ export const Home = ({
     const isActive = (index) => {
         return activeList.filter(item => item === (index)).length > 0;
     };
-
+    const findValue = (name) => {
+        const box = checkBoxes && checkBoxes.filter(box=>box.name===name);
+        if(box && box.length>0){
+            box.forEach(()=>{return true});
+        } else {
+            return false
+        }
+    };
     const clinicalFeaturesCopy = clinicalFeatures && clinicalFeatures.slice();
 
     return (
@@ -81,6 +89,7 @@ export const Home = ({
                                                         return <List.Item>
                                                             <Checkbox
                                                                 name={`${i}_column1`}
+                                                                checked={findValue(`${i}_column1`)}
                                                                 onClick={handleCheck}
                                                                 label={feature}
                                                             />

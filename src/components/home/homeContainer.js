@@ -54,6 +54,7 @@ class HomeContainer extends React.Component {
         return <Home
             activeList={this.state.activeList}
             addDiagnosis={this.addDiagnosis}
+            checkBoxes={this.props.checkBoxes}
             clinicalFeatures={this.props.clinicalFeatures}
             diagnosis={this.props.diagnosis}
             diagnosisChange={this.props.diagnosisChange}
@@ -74,6 +75,7 @@ const mapStateToProps = state => {
         diagnosis: state.homeReducer.diagnosis,
         clinicalFeatures: state.homeReducer.clinicalFeatures,
         relatedDiagnoses: state.homeReducer.relatedDiagnoses,
+        checkBoxes: state.homeReducer.checkBoxes,
     }
 };
 

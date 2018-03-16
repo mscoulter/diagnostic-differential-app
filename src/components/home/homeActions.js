@@ -10,14 +10,31 @@ export const diagnosisChange = (payload) => {
     const cleanText = formatText(diagnosis);
     let clinicalFeatures;
     let relatedDiagnoses;
+    let leftSymptoms;
+    let rightSymptoms;
+    let checkBoxes;
     if (data[cleanText]) {
         clinicalFeatures = data[cleanText].clinical_features;
         relatedDiagnoses = data[cleanText].relatedDiagnoses;
+        leftSymptoms = clinicalFeatures.slice().splice(0, Math.ceil(clinicalFeatures.length / 2));
+        rightSymptoms = clinicalFeatures.slice().splice(Math.floor(clinicalFeatures.length / 2) - (clinicalFeatures.length % 2 === 0 ? 3 : 2), clinicalFeatures.length);
+        checkBoxes = [];
+        leftSymptoms.forEach((symptom, index)=>{
+            checkBoxes.push({name: `${index}_column1`, checked: false});
+        });
+        rightSymptoms.forEach((symptom, index)=>{
+            checkBoxes.push({name: `${index}_column2`, checked: false});
+        });
     }
 
     return {
         type: DIAGNOSIS_CHANGE,
-        payload: {diagnosis, clinicalFeatures, relatedDiagnoses}
+        payload: {
+            diagnosis,
+            clinicalFeatures,
+            relatedDiagnoses,
+            checkBoxes,
+        }
     }
 };
 

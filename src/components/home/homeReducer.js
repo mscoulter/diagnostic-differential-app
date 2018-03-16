@@ -14,11 +14,17 @@ export default (state = initialState, action) => {
                 diagnosis: action.payload.diagnosis,
                 clinicalFeatures: action.payload.clinicalFeatures,
                 relatedDiagnoses: action.payload.relatedDiagnoses,
+                checkBoxes: action.payload.checkBoxes,
             };
         case CHECKBOX_CLICK:
+
+            const newState = !state.checkBoxes ? [] : state.checkBoxes.filter(box=>{
+                return box.name!==action.payload.name;
+            });
+
             return {
                 ...state,
-
+                checkBoxes: [...newState, action.payload]
             };
 
         default:
