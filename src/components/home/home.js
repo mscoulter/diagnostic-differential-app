@@ -22,6 +22,7 @@ export const Home = ({
                          diagnosisChange,
                          displayDiff,
                          firstOpen,
+                         handleCheck,
                          handleClick,
                          handleDiagnosisToggle,
                          relatedDiagnoses,
@@ -32,6 +33,8 @@ export const Home = ({
     const isActive = (index) => {
         return activeList.filter(item => item === (index)).length > 0;
     };
+
+    const clinicalFeaturesCopy = clinicalFeatures && clinicalFeatures.slice();
 
     return (
         <Grid centered>
@@ -48,17 +51,20 @@ export const Home = ({
                             <Card fluid>
                                 <Label attached='top'>Diagnosis #1</Label>
                                 <Card.Content>
-                                    <Grid columns={2}>
-                                        <Grid.Column>
-                                            <Input type="text"
-                                                   placeholder="Enter Diagnosis..."
-                                                   value={diagnosis}
-                                                   onChange={diagnosisChange}/>
-                                        </Grid.Column>
-                                        <Grid.Column>
-                                            <Button onClick={toggleDisplay} primary
-                                                    size='tiny'>{(clinicalFeatures && firstOpen) || showDetail ? 'Hide' : 'Show'} Detail</Button>
-                                        </Grid.Column>
+                                    <Grid columns={2} verticalAlign="middle" padded>
+                                        <Grid.Row>
+                                            <Grid.Column>
+                                                <Input type="text"
+                                                       placeholder="Enter Diagnosis..."
+                                                       value={diagnosis}
+                                                       onChange={diagnosisChange}/>
+                                            </Grid.Column>
+                                            <Grid.Column>
+                                                <Button onClick={toggleDisplay} primary
+                                                        size='tiny'>{(clinicalFeatures && firstOpen) || showDetail ? 'Hide ' : 'Show '}
+                                                    Detail</Button>
+                                            </Grid.Column>
+                                        </Grid.Row>
                                     </Grid>
                                 </Card.Content>
                                 {((clinicalFeatures && firstOpen) || showDetail) &&
@@ -69,22 +75,29 @@ export const Home = ({
                                     <Grid columns={2}>
                                         <Grid.Column>
                                             <List celled>
-                                                {clinicalFeatures && clinicalFeatures
-                                                    .splice(0, Math.ceil(clinicalFeatures.length / 2))
+                                                {clinicalFeatures && clinicalFeaturesCopy
+                                                    .splice(0, Math.ceil(clinicalFeaturesCopy.length / 2))
                                                     .map((feature, i) => {
                                                         return <List.Item>
-                                                            <Checkbox label={feature}/>
+                                                            <Checkbox
+                                                                name={`${i}_column1`}
+                                                                onClick={handleCheck}
+                                                                label={feature}
+                                                            />
                                                         </List.Item>
                                                     })}
                                             </List>
                                         </Grid.Column>
                                         <Grid.Column>
                                             <List celled>
-                                                {clinicalFeatures && clinicalFeatures
-                                                    .splice(Math.floor(clinicalFeatures.length / 2) - (clinicalFeatures.length % 2 === 0 ? 3 : 2), clinicalFeatures.length)
+                                                {clinicalFeatures && clinicalFeaturesCopy
+                                                    .splice(Math.floor(clinicalFeaturesCopy.length / 2) - (clinicalFeaturesCopy.length % 2 === 0 ? 3 : 2), clinicalFeatures.length)
                                                     .map((feature, i) => {
                                                         return <List.Item>
-                                                            <Checkbox label={feature}/>
+                                                            <Checkbox
+                                                                name={`${i}_column2`}
+                                                                onClick={handleCheck}
+                                                                label={feature}/>
                                                         </List.Item>
                                                     })}
                                             </List>
