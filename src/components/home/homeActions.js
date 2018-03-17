@@ -2,8 +2,9 @@ import data from '../../data'
 import {formatText} from '../helpers/formatHelper'
 
 //ACTION TYPES
-export const DIAGNOSIS_CHANGE = 'diagnosis_change';
+export const CHANGE_FREE_TEXT = 'change_free_text';
 export const CHECKBOX_CLICK = 'checkbox_click';
+export const DIAGNOSIS_CHANGE = 'diagnosis_change';
 
 export const diagnosisChange = (payload) => {
     const diagnosis = payload.target.value;
@@ -46,5 +47,12 @@ export const handleCheck = (event, payload) => {
     return {
         type: CHECKBOX_CLICK,
         payload: boxValues
+    }
+};
+
+export const changeFreeText = (event, payload) => {
+    return {
+        type: CHANGE_FREE_TEXT,
+        payload: payload.value
     }
 };

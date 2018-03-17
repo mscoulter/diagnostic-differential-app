@@ -1,7 +1,7 @@
 import React from "react";
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {diagnosisChange, handleCheck} from './homeActions.js'
+import {diagnosisChange, handleCheck, changeFreeText} from './homeActions.js'
 import {Home} from './home';
 
 
@@ -59,10 +59,11 @@ class HomeContainer extends React.Component {
             diagnosis={this.props.diagnosis}
             diagnosisChange={this.props.diagnosisChange}
             firstOpen={this.state.firstOpen}
+            freeText={this.props.freeText}
             handleCheck={this.props.handleCheck}
             handleClick={this.handleClick}
             handleDiagnosisToggle={this.handleDiagnosisToggle}
-            onDiagnosisChange={this.props.diagnosisChange}
+            onChangeFreeText={this.props.changeFreeText}
             relatedDiagnoses={this.props.relatedDiagnoses}
             showDetail={this.state.showDetail}
             toggleDisplay={this.toggleDisplay}
@@ -76,10 +77,12 @@ const mapStateToProps = state => {
         clinicalFeatures: state.homeReducer.clinicalFeatures,
         relatedDiagnoses: state.homeReducer.relatedDiagnoses,
         checkBoxes: state.homeReducer.checkBoxes,
+        freeText: state.homeReducer.freeText
     }
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+    changeFreeText,
     diagnosisChange,
     handleCheck,
 }, dispatch);

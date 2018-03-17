@@ -1,6 +1,7 @@
 import {
     DIAGNOSIS_CHANGE,
-    CHECKBOX_CLICK
+    CHECKBOX_CLICK,
+    CHANGE_FREE_TEXT,
 } from './homeActions'
 
 const initialState = {};
@@ -17,11 +18,16 @@ export default (state = initialState, action) => {
                 checkBoxes: action.payload.checkBoxes,
             };
         case CHECKBOX_CLICK:
-
             return {
                 ...state,
                 checkBoxes: {...state.checkBoxes, ...action.payload}
 
+            };
+        case CHANGE_FREE_TEXT:
+            let x =action.payload
+            return {
+                ...state,
+                freeText: action.payload,
             };
 
         default:

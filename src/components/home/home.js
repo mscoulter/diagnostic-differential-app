@@ -16,16 +16,15 @@ import {
 } from 'semantic-ui-react'
 export const Home = ({
                          activeList,
-                         addDiagnosis,
                          checkBoxes,
                          clinicalFeatures,
                          diagnosis,
                          diagnosisChange,
-                         displayDiff,
                          firstOpen,
+                         freeText,
                          handleCheck,
                          handleClick,
-                         handleDiagnosisToggle,
+                         onChangeFreeText,
                          relatedDiagnoses,
                          showDetail,
                          toggleDisplay
@@ -107,7 +106,9 @@ export const Home = ({
                                         </Grid.Column>
                                     </Grid>
                                     <Form>
-                                        <Form.TextArea placeholder='Other clinical features...'/>
+                                        <Form.TextArea onChange={onChangeFreeText}
+                                                       placeholder='Other clinical features...'
+                                                       value={freeText}/>
                                     </Form>
                                     <Divider/>
                                     <Header as='h4' textAlign='center'>
