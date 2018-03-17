@@ -18,13 +18,10 @@ export default (state = initialState, action) => {
             };
         case CHECKBOX_CLICK:
 
-            const newState = !state.checkBoxes ? [] : state.checkBoxes.filter(box=>{
-                return box.name!==action.payload.name;
-            });
-
             return {
                 ...state,
-                checkBoxes: [...newState, action.payload]
+                checkBoxes: {...state.checkBoxes, ...action.payload}
+
             };
 
         default:

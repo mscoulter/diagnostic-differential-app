@@ -18,12 +18,12 @@ export const diagnosisChange = (payload) => {
         relatedDiagnoses = data[cleanText].relatedDiagnoses;
         leftSymptoms = clinicalFeatures.slice().splice(0, Math.ceil(clinicalFeatures.length / 2));
         rightSymptoms = clinicalFeatures.slice().splice(Math.floor(clinicalFeatures.length / 2) - (clinicalFeatures.length % 2 === 0 ? 3 : 2), clinicalFeatures.length);
-        checkBoxes = [];
+        checkBoxes = {};
         leftSymptoms.forEach((symptom, index)=>{
-            checkBoxes.push({name: `${index}_column1`, checked: false});
+            checkBoxes[`${index}_column1`] = false;
         });
         rightSymptoms.forEach((symptom, index)=>{
-            checkBoxes.push({name: `${index}_column2`, checked: false});
+            checkBoxes[`${index}_column2`] = false;
         });
     }
 
@@ -39,9 +39,9 @@ export const diagnosisChange = (payload) => {
 };
 
 export const handleCheck = (event, payload) => {
+
     const boxValues = {
-        name: payload.name,
-        checked: payload.checked
+        [payload.name]: payload.checked
     };
     return {
         type: CHECKBOX_CLICK,
