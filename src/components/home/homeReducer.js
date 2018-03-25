@@ -1,7 +1,8 @@
 import {
-    DIAGNOSIS_CHANGE,
-    CHECKBOX_CLICK,
+    ADD_DIAGNOSIS,
     CHANGE_FREE_TEXT,
+    CHECKBOX_CLICK,
+    DIAGNOSIS_CHANGE,
     TOGGLE_DISPLAY,
 } from './homeActions'
 
@@ -12,6 +13,14 @@ const initialState = {
 export default (state = initialState, action) => {
     let newList;
     switch (action.type) {
+        case ADD_DIAGNOSIS:
+            newList = [...state.diagnosisList];
+            newList.push({});
+
+            return {
+                ...state,
+                diagnosisList: newList
+            };
         case DIAGNOSIS_CHANGE:
 
             const data = {
@@ -22,11 +31,11 @@ export default (state = initialState, action) => {
                 firstOpen: true,
             };
 
-            const diagnosisList = Object.assign([...state.diagnosisList], {[action.payload.index]: data});
+            newList = Object.assign([...state.diagnosisList], {[action.payload.index]: data});
 
             return {
                 ...state,
-                diagnosisList
+                diagnosisList: newList
             };
 
         case CHECKBOX_CLICK:

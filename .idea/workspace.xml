@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e847c5e-8a84-4820-99cd-1930b5556844" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/home.js" afterPath="$PROJECT_DIR$/src/components/home/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/homeActions.js" afterPath="$PROJECT_DIR$/src/components/home/homeActions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/homeContainer.js" afterPath="$PROJECT_DIR$/src/components/home/homeContainer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/homeReducer.js" afterPath="$PROJECT_DIR$/src/components/home/homeReducer.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +19,25 @@
       <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="116" column="73" lean-forward="false" selection-start-line="116" selection-start-column="73" selection-end-line="116" selection-end-column="73" />
+            <state relative-caret-position="708">
+              <caret line="53" column="50" lean-forward="true" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
                 <element signature="e#1156#1488#0" expanded="false" />
+                <marker date="1522016612000" expanded="true" signature="1839:3206" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="1928:3154" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="1983:3106" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="2045:2518" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="2117:2455" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="2580:3050" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="2654:2987" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="3375:4427" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="3451:3563" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="3622:4427" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="3680:4427" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="3742:4427" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="4194:4427" ph="..." />
+                <marker date="1522016612000" expanded="true" signature="4269:4427" ph="..." />
               </folding>
             </state>
           </provider>
@@ -46,8 +58,8 @@
       <file leaf-file-name="homeActions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/home/homeActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+            <state relative-caret-position="60">
+              <caret line="4" column="43" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -58,10 +70,10 @@
       <file leaf-file-name="homeReducer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/home/homeReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+            <state relative-caret-position="252">
+              <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
               <folding>
-                <element signature="e#0#115#0" expanded="true" />
+                <element signature="e#0#134#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -596,12 +608,12 @@
       <option name="presentableId" value="Default" />
       <updated>1518907185554</updated>
       <workItem from="1520553568033" duration="35857000" />
-      <workItem from="1521997803497" duration="7836000" />
+      <workItem from="1521997803497" duration="9307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43693000" />
+    <option name="totallyTimeSpent" value="45164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="705" extended-state="6" />
@@ -692,6 +704,20 @@
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <element signature="e#1156#1488#0" expanded="false" />
+            <marker date="1522016612000" expanded="true" signature="1839:3206" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="1928:3154" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="1983:3106" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="2045:2518" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="2117:2455" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="2580:3050" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="2654:2987" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3375:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3451:3563" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3622:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3680:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3742:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="4194:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="4269:4427" ph="..." />
           </folding>
         </state>
       </provider>
@@ -721,7 +747,7 @@
         <state relative-caret-position="345">
           <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding>
-            <element signature="e#0#115#0" expanded="true" />
+            <element signature="e#0#134#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -785,6 +811,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="53" column="50" lean-forward="true" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#1156#1488#0" expanded="false" />
+            <marker date="1522016612000" expanded="true" signature="1839:3206" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="1928:3154" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="1983:3106" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="2045:2518" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="2117:2455" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="2580:3050" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="2654:2987" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3375:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3451:3563" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3622:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3680:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="3742:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="4194:4427" ph="..." />
+            <marker date="1522016612000" expanded="true" signature="4269:4427" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/home/homeContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -797,31 +848,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/home/homeActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        <state relative-caret-position="60">
+          <caret line="4" column="43" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="116" column="73" lean-forward="false" selection-start-line="116" selection-start-column="73" selection-end-line="116" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#1156#1488#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/home/homeReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+        <state relative-caret-position="252">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
           <folding>
-            <element signature="e#0#115#0" expanded="true" />
+            <element signature="e#0#134#0" expanded="true" />
           </folding>
         </state>
       </provider>

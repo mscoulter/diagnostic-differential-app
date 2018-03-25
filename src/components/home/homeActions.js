@@ -2,13 +2,17 @@ import data from '../../data'
 import {formatText} from '../helpers/formatHelper'
 
 //ACTION TYPES
+export const ADD_DIAGNOSIS = 'add_diagnosis';
 export const CHANGE_FREE_TEXT = 'change_free_text';
 export const CHECKBOX_CLICK = 'checkbox_click';
 export const DIAGNOSIS_CHANGE = 'diagnosis_change';
 export const TOGGLE_DISPLAY = 'toggle_display';
 
 export const addDiagnosis = (payload) => {
-    return payload
+    return {
+        type: ADD_DIAGNOSIS,
+        payload: payload
+    }
 };
 
 

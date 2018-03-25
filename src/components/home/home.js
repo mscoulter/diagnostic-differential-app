@@ -50,7 +50,7 @@ export const Home = ({
                         <Accordion.Content active={isActive(0)}>
                             {diagnosisList && diagnosisList.map((diagnosis, outer_i) => {
                                 return <Card fluid>
-                                    <Label attached='top'>Diagnosis #1</Label>
+                                    <Label attached='top'>{`Diagnosis #${outer_i+1}`}</Label>
                                     <Card.Content>
                                         <Grid columns={2} verticalAlign="middle" padded>
                                             <Grid.Row>
