@@ -1,7 +1,10 @@
 import React from "react";
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {diagnosisChange, handleCheck, changeFreeText} from './homeActions.js'
+import {addDiagnosis,
+    diagnosisChange,
+    handleCheck,
+    changeFreeText} from './homeActions.js'
 import {Home} from './home';
 
 
@@ -58,12 +61,14 @@ class HomeContainer extends React.Component {
             clinicalFeatures={this.props.clinicalFeatures}
             diagnosis={this.props.diagnosis}
             diagnosisChange={this.props.diagnosisChange}
+            diagnosisList={this.props.diagnosisList}
             firstOpen={this.state.firstOpen}
             freeText={this.props.freeText}
             handleCheck={this.props.handleCheck}
             handleClick={this.handleClick}
             handleDiagnosisToggle={this.handleDiagnosisToggle}
             onChangeFreeText={this.props.changeFreeText}
+            onClickAddDiagnosis={this.props.addDiagnosis}
             relatedDiagnoses={this.props.relatedDiagnoses}
             showDetail={this.state.showDetail}
             toggleDisplay={this.toggleDisplay}
@@ -73,15 +78,17 @@ class HomeContainer extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        diagnosis: state.homeReducer.diagnosis,
-        clinicalFeatures: state.homeReducer.clinicalFeatures,
-        relatedDiagnoses: state.homeReducer.relatedDiagnoses,
-        checkBoxes: state.homeReducer.checkBoxes,
-        freeText: state.homeReducer.freeText
+        // checkBoxes: state.homeReducer.checkBoxes,
+        // clinicalFeatures: state.homeReducer.clinicalFeatures,
+        // diagnosis: state.homeReducer.diagnosis,
+        diagnosisList: state.homeReducer.diagnosisList,
+        // freeText: state.homeReducer.freeText,
+        // relatedDiagnoses: state.homeReducer.relatedDiagnoses
     }
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+    addDiagnosis,
     changeFreeText,
     diagnosisChange,
     handleCheck,

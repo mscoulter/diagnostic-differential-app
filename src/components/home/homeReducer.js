@@ -4,7 +4,9 @@ import {
     CHANGE_FREE_TEXT,
 } from './homeActions'
 
-const initialState = {};
+const initialState = {
+    diagnosisList: [{}]
+};
 
 export default (state = initialState, action) => {
 
@@ -12,19 +14,20 @@ export default (state = initialState, action) => {
         case DIAGNOSIS_CHANGE:
             return {
                 ...state,
-                diagnosis: action.payload.diagnosis,
-                clinicalFeatures: action.payload.clinicalFeatures,
-                relatedDiagnoses: action.payload.relatedDiagnoses,
-                checkBoxes: action.payload.checkBoxes,
+                ...state.diagnosisList[action.payload.index]= {
+                    diagnosis: action.payload.diagnosis,
+                    clinicalFeatures: action.payload.clinicalFeatures,
+                    relatedDiagnoses: action.payload.relatedDiagnoses,
+                    checkBoxes: action.payload.checkBoxes,
+                }
             };
-        case CHECKBOX_CLICK:
+        case CHECKBOX_CLICK:  
             return {
                 ...state,
                 checkBoxes: {...state.checkBoxes, ...action.payload}
 
             };
         case CHANGE_FREE_TEXT:
-            let x =action.payload
             return {
                 ...state,
                 freeText: action.payload,
