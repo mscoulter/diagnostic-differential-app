@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 import {addDiagnosis,
     diagnosisChange,
     handleCheck,
-    changeFreeText} from './homeActions.js'
+    changeFreeText,
+    toggleDisplay} from './homeActions.js'
 import {Home} from './home';
 
 
@@ -13,7 +14,7 @@ class HomeContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {activeList: [], firstOpen: true, showDetail: false};
-        this.toggleDisplay = this.toggleDisplay.bind(this);
+        // this.toggleDisplay = this.toggleDisplay.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleDiagnosisToggle = this.handleDiagnosisToggle.bind(this);
     }
@@ -33,22 +34,22 @@ class HomeContainer extends React.Component {
         return this.setState({activeList: [...this.state.activeList, payload.index]})
 
     };
-
-    toggleDisplay = () => {
-        if (this.state.firstOpen === true && this.props.clinicalFeatures && this.props.clinicalFeatures.length > 0) {
-            return this.setState(
-                {
-                    firstOpen: false,
-                    showDetail: this.state.showDetail
-                });
-        } else {
-            return this.setState(
-                {
-                    firstOpen: false,
-                    showDetail: !this.state.showDetail
-                });
-        }
-    };
+    //
+    // toggleDisplay = (index) => {
+    //     if (this.state.firstOpen === true && this.props.clinicalFeatures && this.props.clinicalFeatures.length > 0) {
+    //         return this.setState(
+    //             {
+    //                 firstOpen: false,
+    //                 showDetail: this.state.showDetail
+    //             });
+    //     } else {
+    //         return this.setState(
+    //             {
+    //                 firstOpen: false,
+    //                 showDetail: !this.state.showDetail
+    //             });
+    //     }
+    // };
     handleDiagnosisToggle = () => {
         return this.setState({showClinicalFeatures: !this.state.showClinicalFeatures})
     };
@@ -71,7 +72,7 @@ class HomeContainer extends React.Component {
             onClickAddDiagnosis={this.props.addDiagnosis}
             relatedDiagnoses={this.props.relatedDiagnoses}
             showDetail={this.state.showDetail}
-            toggleDisplay={this.toggleDisplay}
+            toggleDisplay={this.props.toggleDisplay}
         />
     }
 }
@@ -92,6 +93,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     changeFreeText,
     diagnosisChange,
     handleCheck,
+    toggleDisplay,
 }, dispatch);
 
 export default connect(

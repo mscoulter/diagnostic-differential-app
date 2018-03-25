@@ -5,6 +5,7 @@ import {formatText} from '../helpers/formatHelper'
 export const CHANGE_FREE_TEXT = 'change_free_text';
 export const CHECKBOX_CLICK = 'checkbox_click';
 export const DIAGNOSIS_CHANGE = 'diagnosis_change';
+export const TOGGLE_DISPLAY = 'toggle_display';
 
 export const addDiagnosis = (payload) => {
     return payload
@@ -14,7 +15,10 @@ export const addDiagnosis = (payload) => {
 export const changeFreeText = (event, payload) => {
     return {
         type: CHANGE_FREE_TEXT,
-        payload: payload.value
+        payload: {
+            index: payload.index,
+            value: payload.value
+        }
     }
 
 };
@@ -57,11 +61,21 @@ export const diagnosisChange = (payload) => {
 export const handleCheck = (event, payload) => {
 
     const boxValues = {
-        [payload.name]: payload.checked
+        index: payload.index,
+        field: payload.name,
+        checked: payload.checked
     };
     return {
         type: CHECKBOX_CLICK,
         payload: boxValues
+    }
+};
+
+export const toggleDisplay = (index) => {
+
+    return {
+        type: TOGGLE_DISPLAY,
+        payload: index
     }
 };
 

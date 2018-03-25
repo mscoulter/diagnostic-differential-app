@@ -48,7 +48,7 @@ export const Home = ({
                             <Input type="text" placeholder='Enter Problem #1...'/>
                         </Accordion.Title>
                         <Accordion.Content active={isActive(0)}>
-                            {diagnosisList && diagnosisList.map((diagnosis, i) => {
+                            {diagnosisList && diagnosisList.map((diagnosis, outer_i) => {
                                 return <Card fluid>
                                     <Label attached='top'>Diagnosis #1</Label>
                                     <Card.Content>
@@ -56,21 +56,21 @@ export const Home = ({
                                             <Grid.Row>
                                                 <Grid.Column>
                                                     <Input type="text"
-                                                           id={i}
-                                                        // name={`diagnosis_${i}`}
+                                                           id={outer_i}
                                                            placeholder="Enter Diagnosis..."
                                                            value={diagnosis.diagnosis}
                                                            onChange={diagnosisChange}/>
                                                 </Grid.Column>
                                                 <Grid.Column>
-                                                    <Button onClick={toggleDisplay} primary
-                                                            size='tiny'>{(diagnosis.clinicalFeatures && firstOpen) || showDetail ? 'Hide ' : 'Show '}
+                                                    <Button onClick={()=>toggleDisplay(outer_i)}
+                                                            primary
+                                                            size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
                                                         Detail</Button>
                                                 </Grid.Column>
                                             </Grid.Row>
                                         </Grid>
                                     </Card.Content>
-                                    {((diagnosis.clinicalFeatures && firstOpen) || showDetail) &&
+                                    {((diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail) &&
                                     <Card.Content>
                                         <Header as='h4' textAlign='center'>
                                             Clinical Features
@@ -79,13 +79,14 @@ export const Home = ({
                                             <Grid.Column>
                                                 <List celled>
                                                     {diagnosis.clinicalFeatures && diagnosis.clinicalFeatures
-                                                        .splice()
-                                                        .splice(0, Math.ceil(diagnosis.clinicalFeatures.length / 2))
+                                                        // .slice()
+                                                        .slice(0, Math.ceil(diagnosis.clinicalFeatures.length / 2))
                                                         .map((feature, i) => {
                                                             return <List.Item>
                                                                 <Checkbox
+                                                                    index={outer_i}
                                                                     name={`${i}_column1`}
-                                                                    checked={checkBoxes[`${i}_column1`]}
+                                                                    checked={diagnosis.checkBoxes[`${i}_column1`]}
                                                                     onClick={handleCheck}
                                                                     label={feature}
                                                                 />
@@ -96,11 +97,12 @@ export const Home = ({
                                             <Grid.Column>
                                                 <List celled>
                                                     {diagnosis.clinicalFeatures && diagnosis.clinicalFeatures
-                                                        .slice()
-                                                        .splice(Math.floor(diagnosis.clinicalFeatures.length / 2) - (diagnosis.clinicalFeatures.length % 2 === 0 ? 3 : 2), diagnosis.clinicalFeatures.length)
+                                                        // .slice()
+                                                        .slice(Math.ceil(diagnosis.clinicalFeatures.length / 2), diagnosis.clinicalFeatures.length)
                                                         .map((feature, i) => {
                                                             return <List.Item>
                                                                 <Checkbox
+                                                                    index={outer_i}
                                                                     name={`${i}_column2`}
                                                                     checked={diagnosis.checkBoxes[`${i}_column2`]}
                                                                     onClick={handleCheck}
@@ -112,8 +114,9 @@ export const Home = ({
                                         </Grid>
                                         <Form>
                                             <Form.TextArea onChange={onChangeFreeText}
+                                                           index={outer_i}
                                                            placeholder='Other clinical features...'
-                                                           value={freeText}/>
+                                                           value={diagnosis.freeText}/>
                                         </Form>
                                         <Divider/>
                                         <Header as='h4' textAlign='center'>
