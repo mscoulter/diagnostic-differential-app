@@ -72,6 +72,7 @@ class HomeContainer extends React.Component {
             onChangeFreeText={this.props.changeFreeText}
             onClickAddDiagnosis={this.props.addDiagnosis}
             onRemoveDiagnosis={this.props.removeDiagnosis}
+            problemList={this.props.problemList}
             relatedDiagnoses={this.props.relatedDiagnoses}
             showDetail={this.state.showDetail}
             toggleDisplay={this.props.toggleDisplay}
@@ -85,6 +86,7 @@ const mapStateToProps = state => {
         // clinicalFeatures: state.homeReducer.clinicalFeatures,
         // diagnosis: state.homeReducer.diagnosis,
         diagnosisList: state.homeReducer.diagnosisList,
+        problemList: state.homeReducer.problemList
         // freeText: state.homeReducer.freeText,
         // relatedDiagnoses: state.homeReducer.relatedDiagnoses
     }

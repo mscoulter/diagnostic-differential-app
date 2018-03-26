@@ -28,9 +28,10 @@ export const changeFreeText = (event, payload) => {
 
 };
 
-export const diagnosisChange = (payload) => {
-    const diagnosis = payload.target.value;
-    const index = parseInt(payload.target.id);
+export const diagnosisChange = (event, payload) => {
+    const diagnosis = payload.value;
+    const diagnosisIndex = parseInt(payload.diagnosisIndex);
+    const problemIndex = parseInt(payload.problemIndex);
     const cleanText = formatText(diagnosis);
     let clinicalFeatures;
     let relatedDiagnoses;
@@ -57,7 +58,8 @@ export const diagnosisChange = (payload) => {
             diagnosis,
             checkBoxes,
             clinicalFeatures,
-            index,
+            diagnosisIndex,
+            problemIndex,
             relatedDiagnoses,
         }
     }
