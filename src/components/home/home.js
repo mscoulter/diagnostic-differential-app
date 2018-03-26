@@ -27,6 +27,7 @@ export const Home = ({
                          handleClick,
                          onChangeFreeText,
                          onClickAddDiagnosis,
+                         onRemoveDiagnosis,
                          relatedDiagnoses,
                          showDetail,
                          toggleDisplay
@@ -50,7 +51,18 @@ export const Home = ({
                         <Accordion.Content active={isActive(0)}>
                             {diagnosisList && diagnosisList.map((diagnosis, outer_i) => {
                                 return <Card fluid>
-                                    <Label attached='top'>{`Diagnosis #${outer_i+1}`}</Label>
+                                    <Label attached='top'>
+                                        <Grid>
+                                            <Grid.Column textAlign="left" width={14}>
+                                                {`Diagnosis #${outer_i + 1}`}
+                                            </Grid.Column>
+                                            <Grid.Column textAlign="right" width={2}>
+                                                <Button icon compact size="mini" onClick={onRemoveDiagnosis}>
+                                                    <Icon color="red" name="remove circle outline"/>
+                                                </Button>
+                                            </Grid.Column>
+                                        </Grid>
+                                    </Label>
                                     <Card.Content>
                                         <Grid columns={2} verticalAlign="middle" padded>
                                             <Grid.Row>
@@ -62,7 +74,7 @@ export const Home = ({
                                                            onChange={diagnosisChange}/>
                                                 </Grid.Column>
                                                 <Grid.Column>
-                                                    <Button onClick={()=>toggleDisplay(outer_i)}
+                                                    <Button onClick={() => toggleDisplay(outer_i)}
                                                             primary
                                                             size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
                                                         Detail</Button>
@@ -79,7 +91,7 @@ export const Home = ({
                                             <Grid.Column>
                                                 <List celled>
                                                     {diagnosis.clinicalFeatures && diagnosis.clinicalFeatures
-                                                        // .slice()
+                                                    // .slice()
                                                         .slice(0, Math.ceil(diagnosis.clinicalFeatures.length / 2))
                                                         .map((feature, i) => {
                                                             return <List.Item>
@@ -97,7 +109,7 @@ export const Home = ({
                                             <Grid.Column>
                                                 <List celled>
                                                     {diagnosis.clinicalFeatures && diagnosis.clinicalFeatures
-                                                        // .slice()
+                                                    // .slice()
                                                         .slice(Math.ceil(diagnosis.clinicalFeatures.length / 2), diagnosis.clinicalFeatures.length)
                                                         .map((feature, i) => {
                                                             return <List.Item>

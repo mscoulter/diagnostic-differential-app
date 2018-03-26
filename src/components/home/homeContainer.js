@@ -5,7 +5,8 @@ import {addDiagnosis,
     diagnosisChange,
     handleCheck,
     changeFreeText,
-    toggleDisplay} from './homeActions.js'
+    toggleDisplay,
+    removeDiagnosis} from './homeActions.js'
 import {Home} from './home';
 
 
@@ -70,6 +71,7 @@ class HomeContainer extends React.Component {
             handleDiagnosisToggle={this.handleDiagnosisToggle}
             onChangeFreeText={this.props.changeFreeText}
             onClickAddDiagnosis={this.props.addDiagnosis}
+            onRemoveDiagnosis={this.props.removeDiagnosis}
             relatedDiagnoses={this.props.relatedDiagnoses}
             showDetail={this.state.showDetail}
             toggleDisplay={this.props.toggleDisplay}
@@ -93,6 +95,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     changeFreeText,
     diagnosisChange,
     handleCheck,
+    removeDiagnosis,
     toggleDisplay,
 }, dispatch);
 

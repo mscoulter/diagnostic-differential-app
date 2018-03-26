@@ -6,6 +6,7 @@ export const ADD_DIAGNOSIS = 'add_diagnosis';
 export const CHANGE_FREE_TEXT = 'change_free_text';
 export const CHECKBOX_CLICK = 'checkbox_click';
 export const DIAGNOSIS_CHANGE = 'diagnosis_change';
+export const REMOVE_DIAGNOSIS = 'remove_diagnosis';
 export const TOGGLE_DISPLAY = 'toggle_display';
 
 export const addDiagnosis = (payload) => {
@@ -72,6 +73,14 @@ export const handleCheck = (event, payload) => {
     return {
         type: CHECKBOX_CLICK,
         payload: boxValues
+    }
+};
+
+export const removeDiagnosis = (index) => {
+
+    return {
+        type: REMOVE_DIAGNOSIS,
+        payload: index
     }
 };
 

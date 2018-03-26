@@ -3,6 +3,7 @@ import {
     CHANGE_FREE_TEXT,
     CHECKBOX_CLICK,
     DIAGNOSIS_CHANGE,
+    REMOVE_DIAGNOSIS,
     TOGGLE_DISPLAY,
 } from './homeActions'
 
@@ -56,6 +57,15 @@ export default (state = initialState, action) => {
                 diagnosisList: newList
 
             };
+        case REMOVE_DIAGNOSIS:
+            newList = [...state.diagnosisList];
+            newList.splice(action.payload, 1);
+
+            return{
+                ...state,
+                diagnosisList: newList
+            };
+
         case TOGGLE_DISPLAY:
             newList = [...state.diagnosisList];
             newList[action.payload].firstOpen = false;
