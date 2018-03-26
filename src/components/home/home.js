@@ -27,6 +27,7 @@ export const Home = ({
                          handleClick,
                          onChangeFreeText,
                          onClickAddDiagnosis,
+                         onClickAddProblem,
                          onRemoveDiagnosis,
                          relatedDiagnoses,
                          showDetail,
@@ -143,14 +144,18 @@ export const Home = ({
                                     }
                                 </Card>
                             })}
+                            <Button name="addProblem" compact sizy="tiny" onClick={onClickAddDiagnosis}>
+                                Add Diagnosis
+                            </Button>
                         </Accordion.Content>
                     </Accordion>
+                    <Button name="addDiagnosis" compact sizy="tiny" onClick={onClickAddProblem}>
+                        Add Problem
+                    </Button>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Column width={3}>
-                <Button name="addDiagnosis" onClick={onClickAddDiagnosis}>
-                    Add Diagnosis
-                </Button>
+
             </Grid.Column>
         </Grid>
 
