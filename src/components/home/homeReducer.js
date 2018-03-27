@@ -29,7 +29,7 @@ export default (state = initialState, action) => {
             };
         case ADD_PROBLEM:
             newProblemList = [...state.problemList];
-            newProblemList.push({});
+            newProblemList.push({diagnosisList:[]});
 
             return {
                 ...state,

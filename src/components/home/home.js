@@ -24,7 +24,7 @@ export const Home = ({
                          firstOpen,
                          freeText,
                          handleCheck,
-                         handleClick,
+                         handleProblemDropdownClick,
                          onChangeFreeText,
                          onClickAddDiagnosis,
                          onClickAddProblem,
@@ -45,13 +45,13 @@ export const Home = ({
                 <Grid.Column width={14}>
                     {problemList && problemList.map((problem, problemIndex) => {
                         return <Accordion exclusive={false} fluid styled>
-                            <Accordion.Title active={isActive(0)}>
-                                <Button icon index={0} onClick={handleClick}>
+                            <Accordion.Title active={isActive(problemIndex)}>
+                                <Button icon problemIndex={problemIndex} onClick={handleProblemDropdownClick}>
                                     <Icon name='dropdown'/>
                                 </Button>
-                                <Input type="text" placeholder='Enter Problem #1...'/>
+                                <Input type="text" placeholder={`Enter Problem #${problemIndex+1}...`}/>
                             </Accordion.Title>
-                            <Accordion.Content active={isActive(0)}>
+                            <Accordion.Content active={isActive(problemIndex)}>
                                 {problem.diagnosisList && problem.diagnosisList.map((diagnosis, diagnosisIndex) => {
                                     return <Card fluid>
                                         <Label attached='top'>
