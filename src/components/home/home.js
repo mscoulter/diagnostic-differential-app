@@ -60,7 +60,7 @@ export const Home = ({
                                                     {`Diagnosis #${diagnosisIndex + 1}`}
                                                 </Grid.Column>
                                                 <Grid.Column textAlign="right" width={2}>
-                                                    <Button icon compact size="mini" problemIndex={problemIndex} onClick={onRemoveDiagnosis}>
+                                                    <Button icon compact size="mini" problemIndex={problemIndex} diagnosisIndex={diagnosisIndex} onClick={onRemoveDiagnosis}>
                                                         <Icon color="red" name="remove circle outline"/>
                                                     </Button>
                                                 </Grid.Column>
@@ -78,7 +78,7 @@ export const Home = ({
                                                                onChange={diagnosisChange}/>
                                                     </Grid.Column>
                                                     <Grid.Column>
-                                                        <Button onClick={() => toggleDisplay(diagnosisIndex, problemIndex)}
+                                                        <Button onClick={() => toggleDisplay(problemIndex, diagnosisIndex)}
                                                                 primary
                                                                 size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
                                                             Detail</Button>
@@ -150,7 +150,7 @@ export const Home = ({
                                         }
                                     </Card>
                                 })}
-                                <Button name="addProblem" compact sizy="tiny" onClick={onClickAddDiagnosis}>
+                                <Button name="addProblem" compact sizy="tiny" problemIndex={problemIndex} onClick={onClickAddDiagnosis}>
                                     Add Diagnosis
                                 </Button>
                             </Accordion.Content>

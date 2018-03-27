@@ -9,10 +9,10 @@ export const DIAGNOSIS_CHANGE = 'diagnosis_change';
 export const REMOVE_DIAGNOSIS = 'remove_diagnosis';
 export const TOGGLE_DISPLAY = 'toggle_display';
 
-export const addDiagnosis = (payload) => {
+export const addDiagnosis = (event, payload) => {
     return {
         type: ADD_DIAGNOSIS,
-        payload: payload
+        payload: payload.problemIndex
     }
 };
 
@@ -21,7 +21,8 @@ export const changeFreeText = (event, payload) => {
     return {
         type: CHANGE_FREE_TEXT,
         payload: {
-            index: payload.index,
+            diagnosisIndex: payload.diagnosisIndex,
+            problemIndex: payload.problemIndex,
             value: payload.value
         }
     }
@@ -68,7 +69,8 @@ export const diagnosisChange = (event, payload) => {
 export const handleCheck = (event, payload) => {
 
     const boxValues = {
-        index: payload.index,
+        diagnosisIndex: payload.diagnosisIndex,
+        problemIndex: payload.problemIndex,
         field: payload.name,
         checked: payload.checked
     };
@@ -78,19 +80,25 @@ export const handleCheck = (event, payload) => {
     }
 };
 
-export const removeDiagnosis = (index) => {
+export const removeDiagnosis = (event, payload) => {
 
     return {
         type: REMOVE_DIAGNOSIS,
-        payload: index
+        payload: {
+            problemIndex: payload.problemIndex,
+            diagnosisIndex: payload.diagnosisIndex,
+        }
     }
 };
 
-export const toggleDisplay = (index) => {
+export const toggleDisplay = (problemIndex, diagnosisIndex) => {
 
     return {
         type: TOGGLE_DISPLAY,
-        payload: index
+        payload: {
+            problemIndex,
+            diagnosisIndex
+        }
     }
 };
 

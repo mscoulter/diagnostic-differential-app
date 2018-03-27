@@ -15,12 +15,12 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-    let newDiagnosisList;
     let newProblemList;
+    let diagnosis;
     switch (action.type) {
         case ADD_DIAGNOSIS:
-            newProblemList = [...state.diagnosisList];
-            newProblemList.push({});
+            newProblemList = [...state.problemList];
+            newProblemList[action.payload].diagnosisList.push({});
 
             return {
                 ...state,
@@ -36,7 +36,8 @@ export default (state = initialState, action) => {
             };
 
             newProblemList = [...state.problemList];
-            newProblemList[action.payload.problemIndex].diagnosisList[action.payload.diagnosisIndex] = data;
+            newProblemList[action.payload.problemIndex]
+                .diagnosisList[action.payload.diagnosisIndex] = data;
 
             return {
                 ...state,
@@ -44,8 +45,10 @@ export default (state = initialState, action) => {
             };
 
         case CHECKBOX_CLICK:
-            newProblemList = [...state.diagnosisList];
-            newProblemList[action.payload.index].checkBoxes[action.payload.field] = action.payload.checked;
+            newProblemList = [...state.problemList];
+            newProblemList[action.payload.problemIndex]
+                .diagnosisList[action.payload.diagnosisIndex]
+                .checkBoxes[action.payload.field] = action.payload.checked;
 
             return {
                 ...state,
@@ -53,32 +56,33 @@ export default (state = initialState, action) => {
 
             };
         case CHANGE_FREE_TEXT:
-            newProblemList = [...state.diagnosisList];
-            newProblemList[action.payload.index].freeText = action.payload.value;
+            newProblemList = [...state.problemList];
+            diagnosis = newProblemList[action.payload.problemIndex].diagnosisList[action.payload.diagnosisIndex];
+            diagnosis.freeText = action.payload.value;
 
             return {
                 ...state,
-                diagnosisList: newProblemList
+                problemList: newProblemList
 
             };
         case REMOVE_DIAGNOSIS:
-            newProblemList = [...state.diagnosisList];
-            newProblemList.splice(action.payload, 1);
+            newProblemList = [...state.problemList];
+            newProblemList[action.payload.problemIndex].diagnosisList.splice(action.payload.diagnosisIndex, 1);
 
             return{
                 ...state,
-                diagnosisList: newProblemList
+                problemList: newProblemList
             };
 
         case TOGGLE_DISPLAY:
-            newProblemList = [...state.diagnosisList];
-            newProblemList[action.payload].firstOpen = false;
-            newProblemList[action.payload].showDetail =
-                newProblemList[action.payload].showDetail === undefined ? !newProblemList[action.payload].clinicalFeatures : !newProblemList[action.payload].showDetail;
+            newProblemList = [...state.problemList];
+            diagnosis = newProblemList[action.payload.problemIndex].diagnosisList[action.payload.diagnosisIndex];
+            diagnosis.firstOpen = false;
+            diagnosis.showDetail = diagnosis.showDetail === undefined ? !diagnosis.clinicalFeatures : !diagnosis.showDetail;
 
             return {
                 ...state,
-                diagnosisList: newProblemList
+                problemList: newProblemList
 
             };
 
