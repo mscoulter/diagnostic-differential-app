@@ -1,5 +1,6 @@
 import {
     ADD_DIAGNOSIS,
+    ADD_PROBLEM,
     CHANGE_FREE_TEXT,
     CHECKBOX_CLICK,
     DIAGNOSIS_CHANGE,
@@ -24,7 +25,15 @@ export default (state = initialState, action) => {
 
             return {
                 ...state,
-                diagnosisList: newProblemList
+                problemList: newProblemList
+            };
+        case ADD_PROBLEM:
+            newProblemList = [...state.problemList];
+            newProblemList.push({});
+
+            return {
+                ...state,
+                problemList: newProblemList
             };
         case DIAGNOSIS_CHANGE:
             const data = {

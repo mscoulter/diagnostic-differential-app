@@ -2,6 +2,7 @@ import React from "react";
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {addDiagnosis,
+    addProblem,
     diagnosisChange,
     handleCheck,
     changeFreeText,
@@ -71,6 +72,7 @@ class HomeContainer extends React.Component {
             handleDiagnosisToggle={this.handleDiagnosisToggle}
             onChangeFreeText={this.props.changeFreeText}
             onClickAddDiagnosis={this.props.addDiagnosis}
+            onClickAddProblem={this.props.addProblem}
             onRemoveDiagnosis={this.props.removeDiagnosis}
             problemList={this.props.problemList}
             relatedDiagnoses={this.props.relatedDiagnoses}
@@ -94,6 +96,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     addDiagnosis,
+    addProblem,
     changeFreeText,
     diagnosisChange,
     handleCheck,

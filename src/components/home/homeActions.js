@@ -3,6 +3,7 @@ import {formatText} from '../helpers/formatHelper'
 
 //ACTION TYPES
 export const ADD_DIAGNOSIS = 'add_diagnosis';
+export const ADD_PROBLEM = 'add_problem';
 export const CHANGE_FREE_TEXT = 'change_free_text';
 export const CHECKBOX_CLICK = 'checkbox_click';
 export const DIAGNOSIS_CHANGE = 'diagnosis_change';
@@ -13,6 +14,14 @@ export const addDiagnosis = (event, payload) => {
     return {
         type: ADD_DIAGNOSIS,
         payload: payload.problemIndex
+    }
+};
+
+
+export const addProblem = (event, payload) => {
+    return {
+        type: ADD_PROBLEM,
+        payload: payload
     }
 };
 
