@@ -61,6 +61,7 @@ export const Home = ({
                                             <Button circular icon="remove"
                                                     color="red"
                                                     inverted
+                                                    compact
                                                     size="mini"
                                                     problemIndex={problemIndex}
                                                     onClick={onClickRemoveProblem}>
@@ -70,8 +71,8 @@ export const Home = ({
                                 </Grid>
                             </Accordion.Title>
                             <Accordion.Content active={isActive(problemIndex)}>
-                                {problem.diagnosisList && problem.diagnosisList.map((diagnosis, diagnosisIndex) => {
-                                    return <Card fluid>
+                                {problem.diagnosisList && problem.diagnosisList.map((diagnosis, diagnosisIndex) => (
+                                    <Card fluid>
                                         <Label attached='top'>
                                             <Grid>
                                                 <Grid.Column textAlign="left" width={14}>
@@ -82,6 +83,7 @@ export const Home = ({
                                                             icon="remove"
                                                             color="red"
                                                             inverted
+                                                            compact
                                                             size="mini"
                                                             problemIndex={problemIndex}
                                                             diagnosisIndex={diagnosisIndex}
@@ -91,23 +93,19 @@ export const Home = ({
                                             </Grid>
                                         </Label>
                                         <Card.Content>
-                                            <Grid columns={2} verticalAlign="middle" padded>
+                                            <Grid verticalAlign="middle" padded>
                                                 <Grid.Row>
-                                                    <Grid.Column>
                                                         <Input type="text"
                                                                diagnosisIndex={diagnosisIndex}
                                                                problemIndex={problemIndex}
                                                                placeholder="Enter Diagnosis..."
                                                                value={diagnosis.diagnosis}
                                                                onChange={diagnosisChange}/>
-                                                    </Grid.Column>
-                                                    <Grid.Column>
                                                         <Button
                                                             onClick={() => toggleDisplay(problemIndex, diagnosisIndex)}
                                                             primary
                                                             size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
                                                             Detail</Button>
-                                                    </Grid.Column>
                                                 </Grid.Row>
                                             </Grid>
                                         </Card.Content>
@@ -174,7 +172,7 @@ export const Home = ({
                                         </Card.Content>
                                         }
                                     </Card>
-                                })}
+                                    ))}
                                 <Button name="addProblem"
                                         compact sizy="tiny"
                                         problemIndex={problemIndex}
