@@ -8,6 +8,7 @@ export const CHANGE_FREE_TEXT = 'change_free_text';
 export const CHECKBOX_CLICK = 'checkbox_click';
 export const DIAGNOSIS_CHANGE = 'diagnosis_change';
 export const REMOVE_DIAGNOSIS = 'remove_diagnosis';
+export const REMOVE_PROBLEM = 'remove_problem';
 export const TOGGLE_DISPLAY = 'toggle_display';
 
 export const addDiagnosis = (event, payload) => {
@@ -96,6 +97,16 @@ export const removeDiagnosis = (event, payload) => {
         payload: {
             problemIndex: payload.problemIndex,
             diagnosisIndex: payload.diagnosisIndex,
+        }
+    }
+};
+
+export const removeProblem = (event, payload) => {
+
+    return {
+        type: REMOVE_PROBLEM,
+        payload: {
+            problemIndex: payload.problemIndex,
         }
     }
 };

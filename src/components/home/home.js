@@ -28,7 +28,8 @@ export const Home = ({
                          onChangeFreeText,
                          onClickAddDiagnosis,
                          onClickAddProblem,
-                         onRemoveDiagnosis,
+                         onClickRemoveProblem,
+                         onClickRemoveDiagnosis,
                          problemList,
                          relatedDiagnoses,
                          showDetail,
@@ -46,10 +47,27 @@ export const Home = ({
                     {problemList && problemList.map((problem, problemIndex) => {
                         return <Accordion exclusive={false} fluid styled>
                             <Accordion.Title active={isActive(problemIndex)}>
-                                <Button icon problemIndex={problemIndex} onClick={handleProblemDropdownClick}>
-                                    <Icon name='dropdown'/>
-                                </Button>
-                                <Input type="text" placeholder={`Enter Problem #${problemIndex+1}...`}/>
+                                <Grid padded="horizontally">
+                                    <Grid.Row>
+                                        <Grid.Column width={15}>
+                                            <Button icon problemIndex={problemIndex}
+                                                    onClick={handleProblemDropdownClick}>
+                                                <Icon name='dropdown'/>
+                                            </Button>
+                                            <Input type="text"
+                                                   placeholder={`Enter Problem #${problemIndex + 1}...`}/>
+                                        </Grid.Column>
+                                        <Grid.Column width={1} verticalAlign="middle">
+                                            <Button circular icon="remove"
+                                                    color="red"
+                                                    inverted
+                                                    size="mini"
+                                                    problemIndex={problemIndex}
+                                                    onClick={onClickRemoveProblem}>
+                                            </Button>
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                </Grid>
                             </Accordion.Title>
                             <Accordion.Content active={isActive(problemIndex)}>
                                 {problem.diagnosisList && problem.diagnosisList.map((diagnosis, diagnosisIndex) => {
@@ -60,8 +78,14 @@ export const Home = ({
                                                     {`Diagnosis #${diagnosisIndex + 1}`}
                                                 </Grid.Column>
                                                 <Grid.Column textAlign="right" width={2}>
-                                                    <Button icon compact size="mini" problemIndex={problemIndex} diagnosisIndex={diagnosisIndex} onClick={onRemoveDiagnosis}>
-                                                        <Icon color="red" name="remove circle outline"/>
+                                                    <Button circular
+                                                            icon="remove"
+                                                            color="red"
+                                                            inverted
+                                                            size="mini"
+                                                            problemIndex={problemIndex}
+                                                            diagnosisIndex={diagnosisIndex}
+                                                            onClick={onClickRemoveDiagnosis}>
                                                     </Button>
                                                 </Grid.Column>
                                             </Grid>
@@ -78,9 +102,10 @@ export const Home = ({
                                                                onChange={diagnosisChange}/>
                                                     </Grid.Column>
                                                     <Grid.Column>
-                                                        <Button onClick={() => toggleDisplay(problemIndex, diagnosisIndex)}
-                                                                primary
-                                                                size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
+                                                        <Button
+                                                            onClick={() => toggleDisplay(problemIndex, diagnosisIndex)}
+                                                            primary
+                                                            size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
                                                             Detail</Button>
                                                     </Grid.Column>
                                                 </Grid.Row>
@@ -150,7 +175,10 @@ export const Home = ({
                                         }
                                     </Card>
                                 })}
-                                <Button name="addProblem" compact sizy="tiny" problemIndex={problemIndex} onClick={onClickAddDiagnosis}>
+                                <Button name="addProblem"
+                                        compact sizy="tiny"
+                                        problemIndex={problemIndex}
+                                        onClick={onClickAddDiagnosis}>
                                     Add Diagnosis
                                 </Button>
                             </Accordion.Content>

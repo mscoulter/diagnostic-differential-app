@@ -5,6 +5,7 @@ import {
     CHECKBOX_CLICK,
     DIAGNOSIS_CHANGE,
     REMOVE_DIAGNOSIS,
+    REMOVE_PROBLEM,
     TOGGLE_DISPLAY,
 } from './homeActions'
 
@@ -74,9 +75,19 @@ export default (state = initialState, action) => {
                 problemList: newProblemList
 
             };
+
         case REMOVE_DIAGNOSIS:
             newProblemList = [...state.problemList];
             newProblemList[action.payload.problemIndex].diagnosisList.splice(action.payload.diagnosisIndex, 1);
+
+            return{
+                ...state,
+                problemList: newProblemList
+            };
+
+        case REMOVE_PROBLEM:
+            newProblemList = [...state.problemList];
+            newProblemList.splice(action.payload.problemIndex, 1);
 
             return{
                 ...state,
