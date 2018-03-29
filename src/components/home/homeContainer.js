@@ -3,12 +3,14 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {addDiagnosis,
     addProblem,
+    changeFreeText,
     diagnosisChange,
     handleCheck,
-    changeFreeText,
-    toggleDisplay,
+    moveDown,
+    moveUp,
     removeDiagnosis,
-    removeProblem} from './homeActions.js'
+    removeProblem,
+    toggleDisplay,} from './homeActions.js'
 import {Home} from './home';
 
 
@@ -17,15 +19,8 @@ class HomeContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {activeList: [], firstOpen: true, showDetail: false};
-        // this.toggleDisplay = this.toggleDisplay.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleDiagnosisToggle = this.handleDiagnosisToggle.bind(this);
-    }
-
-
-    componentWillMount() {
-
-
     }
 
     handleClick = (event, payload) => {
@@ -37,22 +32,7 @@ class HomeContainer extends React.Component {
         return this.setState({activeList: [...this.state.activeList, payload.problemIndex]})
 
     };
-    //
-    // toggleDisplay = (index) => {
-    //     if (this.state.firstOpen === true && this.props.clinicalFeatures && this.props.clinicalFeatures.length > 0) {
-    //         return this.setState(
-    //             {
-    //                 firstOpen: false,
-    //                 showDetail: this.state.showDetail
-    //             });
-    //     } else {
-    //         return this.setState(
-    //             {
-    //                 firstOpen: false,
-    //                 showDetail: !this.state.showDetail
-    //             });
-    //     }
-    // };
+
     handleDiagnosisToggle = () => {
         return this.setState({showClinicalFeatures: !this.state.showClinicalFeatures})
     };
@@ -61,23 +41,19 @@ class HomeContainer extends React.Component {
         return <Home
             activeList={this.state.activeList}
             addDiagnosis={this.addDiagnosis}
-            checkBoxes={this.props.checkBoxes}
-            clinicalFeatures={this.props.clinicalFeatures}
-            diagnosis={this.props.diagnosis}
             diagnosisChange={this.props.diagnosisChange}
-            diagnosisList={this.props.diagnosisList}
             firstOpen={this.state.firstOpen}
-            freeText={this.props.freeText}
             handleCheck={this.props.handleCheck}
             handleProblemDropdownClick={this.handleClick}
             handleDiagnosisToggle={this.handleDiagnosisToggle}
             onChangeFreeText={this.props.changeFreeText}
             onClickAddDiagnosis={this.props.addDiagnosis}
             onClickAddProblem={this.props.addProblem}
+            onClickMoveDown={this.props.moveDown}
+            onClickMoveUp={this.props.moveUp}
             onClickRemoveDiagnosis={this.props.removeDiagnosis}
             onClickRemoveProblem={this.props.removeProblem}
             problemList={this.props.problemList}
-            relatedDiagnoses={this.props.relatedDiagnoses}
             showDetail={this.state.showDetail}
             toggleDisplay={this.props.toggleDisplay}
         />
@@ -86,13 +62,7 @@ class HomeContainer extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        // checkBoxes: state.homeReducer.checkBoxes,
-        // clinicalFeatures: state.homeReducer.clinicalFeatures,
-        // diagnosis: state.homeReducer.diagnosis,
-        diagnosisList: state.homeReducer.diagnosisList,
         problemList: state.homeReducer.problemList
-        // freeText: state.homeReducer.freeText,
-        // relatedDiagnoses: state.homeReducer.relatedDiagnoses
     }
 };
 
@@ -102,6 +72,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     changeFreeText,
     diagnosisChange,
     handleCheck,
+    moveDown,
+    moveUp,
     removeDiagnosis,
     removeProblem,
     toggleDisplay,

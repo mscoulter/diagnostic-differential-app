@@ -1,9 +1,12 @@
+import {arrayMove} from './reducerHelper'
 import {
     ADD_DIAGNOSIS,
     ADD_PROBLEM,
     CHANGE_FREE_TEXT,
     CHECKBOX_CLICK,
     DIAGNOSIS_CHANGE,
+    MOVE_DIAGNOSIS_DOWN,
+    MOVE_DIAGNOSIS_UP,
     REMOVE_DIAGNOSIS,
     REMOVE_PROBLEM,
     TOGGLE_DISPLAY,
@@ -19,6 +22,8 @@ const initialState = {
 export default (state = initialState, action) => {
     let newProblemList;
     let diagnosis;
+    let diagnosisList;
+    let diagnosisIndex;
     switch (action.type) {
         case ADD_DIAGNOSIS:
             newProblemList = [...state.problemList];
@@ -30,7 +35,7 @@ export default (state = initialState, action) => {
             };
         case ADD_PROBLEM:
             newProblemList = [...state.problemList];
-            newProblemList.push({diagnosisList:[]});
+            newProblemList.push({diagnosisList: []});
 
             return {
                 ...state,
@@ -65,6 +70,7 @@ export default (state = initialState, action) => {
                 diagnosisList: newProblemList
 
             };
+
         case CHANGE_FREE_TEXT:
             newProblemList = [...state.problemList];
             diagnosis = newProblemList[action.payload.problemIndex].diagnosisList[action.payload.diagnosisIndex];
@@ -76,11 +82,39 @@ export default (state = initialState, action) => {
 
             };
 
+        case MOVE_DIAGNOSIS_DOWN:
+            newProblemList = [...state.problemList];
+            diagnosisIndex = action.payload.diagnosisIndex;
+            diagnosisList = newProblemList[action.payload.problemIndex].diagnosisList;
+            if(diagnosisList[diagnosisIndex+1]){
+                arrayMove(diagnosisList, diagnosisIndex, diagnosisIndex+1);
+            }
+
+            return {
+                ...state,
+                problemList: newProblemList
+
+            };
+
+        case MOVE_DIAGNOSIS_UP:
+            newProblemList = [...state.problemList];
+            diagnosisIndex = action.payload.diagnosisIndex;
+            diagnosisList = newProblemList[action.payload.problemIndex].diagnosisList;
+            if(diagnosisList[diagnosisIndex-1]){
+                arrayMove(diagnosisList, diagnosisIndex, diagnosisIndex-1);
+            }
+
+            return {
+                ...state,
+                problemList: newProblemList
+
+            };
+
         case REMOVE_DIAGNOSIS:
             newProblemList = [...state.problemList];
             newProblemList[action.payload.problemIndex].diagnosisList.splice(action.payload.diagnosisIndex, 1);
 
-            return{
+            return {
                 ...state,
                 problemList: newProblemList
             };
@@ -89,7 +123,7 @@ export default (state = initialState, action) => {
             newProblemList = [...state.problemList];
             newProblemList.splice(action.payload.problemIndex, 1);
 
-            return{
+            return {
                 ...state,
                 problemList: newProblemList
             };

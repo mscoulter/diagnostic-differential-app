@@ -16,23 +16,17 @@ import {
 } from 'semantic-ui-react'
 export const Home = ({
                          activeList,
-                         checkBoxes,
-                         clinicalFeatures,
-                         diagnosis,
-                         diagnosisList,
                          diagnosisChange,
-                         firstOpen,
-                         freeText,
                          handleCheck,
                          handleProblemDropdownClick,
                          onChangeFreeText,
                          onClickAddDiagnosis,
                          onClickAddProblem,
+                         onClickMoveDown,
+                         onClickMoveUp,
                          onClickRemoveProblem,
                          onClickRemoveDiagnosis,
                          problemList,
-                         relatedDiagnoses,
-                         showDetail,
                          toggleDisplay
                      }) => {
 
@@ -72,10 +66,29 @@ export const Home = ({
                             </Accordion.Title>
                             <Accordion.Content active={isActive(problemIndex)}>
                                 {problem.diagnosisList && problem.diagnosisList.map((diagnosis, diagnosisIndex) => (
+
                                     <Card fluid>
                                         <Label attached='top'>
                                             <Grid>
                                                 <Grid.Column textAlign="left" width={14}>
+                                                    <Button circular
+                                                            color="green"
+                                                            inverted
+                                                            problemIndex={problemIndex}
+                                                            diagnosisIndex={diagnosisIndex}
+                                                            onClick={onClickMoveUp}
+                                                            compact
+                                                            size="mini"
+                                                            icon="arrow up"/>
+                                                    <Button circular
+                                                            color="orange"
+                                                            inverted
+                                                            problemIndex={problemIndex}
+                                                            diagnosisIndex={diagnosisIndex}
+                                                            onClick={onClickMoveDown}
+                                                            compact
+                                                            size="mini"
+                                                            icon="arrow down"/>
                                                     {`Diagnosis #${diagnosisIndex + 1}`}
                                                 </Grid.Column>
                                                 <Grid.Column textAlign="right" width={2}>
@@ -95,17 +108,17 @@ export const Home = ({
                                         <Card.Content>
                                             <Grid verticalAlign="middle" padded>
                                                 <Grid.Row>
-                                                        <Input type="text"
-                                                               diagnosisIndex={diagnosisIndex}
-                                                               problemIndex={problemIndex}
-                                                               placeholder="Enter Diagnosis..."
-                                                               value={diagnosis.diagnosis}
-                                                               onChange={diagnosisChange}/>
-                                                        <Button
-                                                            onClick={() => toggleDisplay(problemIndex, diagnosisIndex)}
-                                                            primary
-                                                            size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
-                                                            Detail</Button>
+                                                    <Input type="text"
+                                                           diagnosisIndex={diagnosisIndex}
+                                                           problemIndex={problemIndex}
+                                                           placeholder="Enter Diagnosis..."
+                                                           value={diagnosis.diagnosis}
+                                                           onChange={diagnosisChange}/>
+                                                    <Button
+                                                        onClick={() => toggleDisplay(problemIndex, diagnosisIndex)}
+                                                        primary
+                                                        size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
+                                                        Detail</Button>
                                                 </Grid.Row>
                                             </Grid>
                                         </Card.Content>
@@ -172,7 +185,7 @@ export const Home = ({
                                         </Card.Content>
                                         }
                                     </Card>
-                                    ))}
+                                ))}
                                 <Button name="addProblem"
                                         compact sizy="tiny"
                                         problemIndex={problemIndex}
