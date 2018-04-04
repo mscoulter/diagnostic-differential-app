@@ -44,12 +44,29 @@ export const Home = ({
                                 <Grid padded="horizontally">
                                     <Grid.Row>
                                         <Grid.Column width={15}>
+                                                <Button circular
+                                                        color="green"
+                                                        inverted
+                                                        problemIndex={problemIndex}
+                                                        onClick={onClickMoveUp}
+                                                        compact
+                                                        size="mini"
+                                                        icon="arrow up"/>
+                                                <Button circular
+                                                        color="orange"
+                                                        inverted
+                                                        problemIndex={problemIndex}
+                                                        onClick={onClickMoveDown}
+                                                        compact
+                                                        size="mini"
+                                                        icon="arrow down"/>
+
+                                            <Input type="text"
+                                                   placeholder={`Enter Problem #${problemIndex + 1}...`}/>
                                             <Button icon problemIndex={problemIndex}
                                                     onClick={handleProblemDropdownClick}>
                                                 <Icon name='dropdown'/>
                                             </Button>
-                                            <Input type="text"
-                                                   placeholder={`Enter Problem #${problemIndex + 1}...`}/>
                                         </Grid.Column>
                                         <Grid.Column width={1} verticalAlign="middle">
                                             <Button circular icon="remove"

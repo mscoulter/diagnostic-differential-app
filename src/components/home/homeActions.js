@@ -9,6 +9,8 @@ export const CHECKBOX_CLICK = 'checkbox_click';
 export const DIAGNOSIS_CHANGE = 'diagnosis_change';
 export const MOVE_DIAGNOSIS_UP = 'move_diagnosis_up';
 export const MOVE_DIAGNOSIS_DOWN = 'move_diagnosis_down';
+export const MOVE_PROBLEM_UP = 'move_problem_up';
+export const MOVE_PROBLEM_DOWN = 'move_problem_down';
 export const REMOVE_DIAGNOSIS = 'remove_diagnosis';
 export const REMOVE_PROBLEM = 'remove_problem';
 export const TOGGLE_DISPLAY = 'toggle_display';
@@ -93,21 +95,37 @@ export const handleCheck = (event, payload) => {
 };
 
 export const moveDown = (event, payload) => {
+    if(payload.diagnosisIndex) {
+        return {
+            type: MOVE_DIAGNOSIS_DOWN,
+            payload: {
+                problemIndex: payload.problemIndex,
+                diagnosisIndex: payload.diagnosisIndex,
+            }
+        }
+    }
     return {
-        type: MOVE_DIAGNOSIS_DOWN,
+        type: MOVE_PROBLEM_DOWN,
         payload: {
             problemIndex: payload.problemIndex,
-            diagnosisIndex: payload.diagnosisIndex,
         }
     }
 };
 
 export const moveUp = (event, payload) => {
+    if(payload.diagnosisIndex) {
+        return {
+            type: MOVE_DIAGNOSIS_UP,
+            payload: {
+                problemIndex: payload.problemIndex,
+                diagnosisIndex: payload.diagnosisIndex,
+            }
+        }
+    }
     return {
-        type: MOVE_DIAGNOSIS_UP,
+        type: MOVE_PROBLEM_UP,
         payload: {
             problemIndex: payload.problemIndex,
-            diagnosisIndex: payload.diagnosisIndex,
         }
     }
 };

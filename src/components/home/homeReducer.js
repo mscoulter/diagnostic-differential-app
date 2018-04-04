@@ -7,6 +7,8 @@ import {
     DIAGNOSIS_CHANGE,
     MOVE_DIAGNOSIS_DOWN,
     MOVE_DIAGNOSIS_UP,
+    MOVE_PROBLEM_DOWN,
+    MOVE_PROBLEM_UP,
     REMOVE_DIAGNOSIS,
     REMOVE_PROBLEM,
     TOGGLE_DISPLAY,
@@ -24,6 +26,7 @@ export default (state = initialState, action) => {
     let diagnosis;
     let diagnosisList;
     let diagnosisIndex;
+    let problemIndex;
     switch (action.type) {
         case ADD_DIAGNOSIS:
             newProblemList = [...state.problemList];
@@ -109,6 +112,33 @@ export default (state = initialState, action) => {
                 problemList: newProblemList
 
             };
+
+        case MOVE_PROBLEM_DOWN:
+            newProblemList = [...state.problemList];
+            problemIndex = action.payload.problemIndex;
+            if(newProblemList[problemIndex+1]){
+                arrayMove(newProblemList, problemIndex, problemIndex+1);
+            }
+
+            return {
+                ...state,
+                problemList: newProblemList
+
+            };
+
+        case MOVE_PROBLEM_UP:
+            newProblemList = [...state.problemList];
+            problemIndex = action.payload.problemIndex;
+            if(newProblemList[problemIndex-1]){
+                arrayMove(newProblemList, problemIndex, problemIndex-1);
+            }
+
+            return {
+                ...state,
+                problemList: newProblemList
+
+            };
+
 
         case REMOVE_DIAGNOSIS:
             newProblemList = [...state.problemList];
