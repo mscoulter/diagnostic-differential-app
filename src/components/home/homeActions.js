@@ -11,6 +11,7 @@ export const MOVE_DIAGNOSIS_UP = 'move_diagnosis_up';
 export const MOVE_DIAGNOSIS_DOWN = 'move_diagnosis_down';
 export const MOVE_PROBLEM_UP = 'move_problem_up';
 export const MOVE_PROBLEM_DOWN = 'move_problem_down';
+export const PROBLEM_CHANGE = 'problem_change';
 export const REMOVE_DIAGNOSIS = 'remove_diagnosis';
 export const REMOVE_PROBLEM = 'remove_problem';
 export const TOGGLE_DISPLAY = 'toggle_display';
@@ -126,6 +127,17 @@ export const moveUp = (event, payload) => {
         type: MOVE_PROBLEM_UP,
         payload: {
             problemIndex: payload.problemIndex,
+        }
+    }
+};
+
+export const problemChange = (event, payload) => {
+    return {
+        type: PROBLEM_CHANGE,
+        payload: {
+            problemIndex: payload.problemIndex,
+            problemName: payload.name,
+            value: payload.value,
         }
     }
 };

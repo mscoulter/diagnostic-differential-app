@@ -8,6 +8,7 @@ import {addDiagnosis,
     handleCheck,
     moveDown,
     moveUp,
+    problemChange,
     removeDiagnosis,
     removeProblem,
     toggleDisplay,} from './homeActions.js'
@@ -53,6 +54,7 @@ class HomeContainer extends React.Component {
             onClickMoveUp={this.props.moveUp}
             onClickRemoveDiagnosis={this.props.removeDiagnosis}
             onClickRemoveProblem={this.props.removeProblem}
+            onProblemChange={this.props.problemChange}
             problemList={this.props.problemList}
             showDetail={this.state.showDetail}
             toggleDisplay={this.props.toggleDisplay}
@@ -74,6 +76,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     handleCheck,
     moveDown,
     moveUp,
+    problemChange,
     removeDiagnosis,
     removeProblem,
     toggleDisplay,

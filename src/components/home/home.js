@@ -26,6 +26,7 @@ export const Home = ({
                          onClickMoveUp,
                          onClickRemoveProblem,
                          onClickRemoveDiagnosis,
+                         onProblemChange,
                          problemList,
                          toggleDisplay
                      }) => {
@@ -62,6 +63,10 @@ export const Home = ({
                                                         icon="arrow down"/>
 
                                             <Input type="text"
+                                                   name="problemName"
+                                                   value={problem.problemName}
+                                                   onChange={onProblemChange}
+                                                   problemIndex={problemIndex}
                                                    placeholder={`Enter Problem #${problemIndex + 1}...`}/>
                                             <Button icon problemIndex={problemIndex}
                                                     onClick={handleProblemDropdownClick}>
