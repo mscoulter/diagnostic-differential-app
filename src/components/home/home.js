@@ -39,16 +39,17 @@ export const Home = ({
         <Grid centered>
             <Grid.Row>
                 <Grid.Column width={14}>
-                    {problemList && problemList.map((problem, problemIndex) => {
-                        return <Accordion exclusive={false} fluid styled>
-                            <Accordion.Title active={isActive(problemIndex)}>
+                    {problemList && problemList.map((problem, problem_index) => {
+                        return <Accordion exclusive={false} key={problem_index} fluid styled>
+                            <Accordion.Title active={isActive(problem_index)}>
                                 <Grid padded="horizontally">
                                     <Grid.Row>
                                         <Grid.Column width={15}>
                                                 <Button circular
                                                         color="green"
                                                         inverted
-                                                        problemIndex={problemIndex}
+                                                        // ref={false}
+                                                        problem_index={problem_index}
                                                         onClick={onClickMoveUp}
                                                         compact
                                                         size="mini"
@@ -56,7 +57,7 @@ export const Home = ({
                                                 <Button circular
                                                         color="orange"
                                                         inverted
-                                                        problemIndex={problemIndex}
+                                                        problem_index={problem_index}
                                                         onClick={onClickMoveDown}
                                                         compact
                                                         size="mini"
@@ -66,9 +67,9 @@ export const Home = ({
                                                    name="problemName"
                                                    value={problem.problemName}
                                                    onChange={onProblemChange}
-                                                   problemIndex={problemIndex}
-                                                   placeholder={`Enter Problem #${problemIndex + 1}...`}/>
-                                            <Button icon problemIndex={problemIndex}
+                                                   problem_index={problem_index}
+                                                   placeholder={`Enter Problem #${problem_index + 1}...`}/>
+                                            <Button icon problem_index={problem_index}
                                                     onClick={handleProblemDropdownClick}>
                                                 <Icon name='dropdown'/>
                                             </Button>
@@ -79,25 +80,25 @@ export const Home = ({
                                                     inverted
                                                     compact
                                                     size="mini"
-                                                    problemIndex={problemIndex}
+                                                    problem_index={problem_index}
                                                     onClick={onClickRemoveProblem}>
                                             </Button>
                                         </Grid.Column>
                                     </Grid.Row>
                                 </Grid>
                             </Accordion.Title>
-                            <Accordion.Content active={isActive(problemIndex)}>
-                                {problem.diagnosisList && problem.diagnosisList.map((diagnosis, diagnosisIndex) => (
+                            <Accordion.Content active={isActive(problem_index)}>
+                                {problem.diagnosisList && problem.diagnosisList.map((diagnosis, diagnosis_index) => (
 
-                                    <Card fluid>
+                                    <Card key={diagnosis_index} fluid>
                                         <Label attached='top'>
                                             <Grid>
                                                 <Grid.Column textAlign="left" width={14}>
                                                     <Button circular
                                                             color="green"
                                                             inverted
-                                                            problemIndex={problemIndex}
-                                                            diagnosisIndex={diagnosisIndex}
+                                                            problem_index={problem_index}
+                                                            diagnosis_index={diagnosis_index}
                                                             onClick={onClickMoveUp}
                                                             compact
                                                             size="mini"
@@ -105,13 +106,13 @@ export const Home = ({
                                                     <Button circular
                                                             color="orange"
                                                             inverted
-                                                            problemIndex={problemIndex}
-                                                            diagnosisIndex={diagnosisIndex}
+                                                            problem_index={problem_index}
+                                                            diagnosis_index={diagnosis_index}
                                                             onClick={onClickMoveDown}
                                                             compact
                                                             size="mini"
                                                             icon="arrow down"/>
-                                                    {`Diagnosis #${diagnosisIndex + 1}`}
+                                                    {`Diagnosis #${diagnosis_index + 1}`}
                                                 </Grid.Column>
                                                 <Grid.Column textAlign="right" width={2}>
                                                     <Button circular
@@ -120,8 +121,8 @@ export const Home = ({
                                                             inverted
                                                             compact
                                                             size="mini"
-                                                            problemIndex={problemIndex}
-                                                            diagnosisIndex={diagnosisIndex}
+                                                            problem_index={problem_index}
+                                                            diagnosis_index={diagnosis_index}
                                                             onClick={onClickRemoveDiagnosis}>
                                                     </Button>
                                                 </Grid.Column>
@@ -131,13 +132,13 @@ export const Home = ({
                                             <Grid verticalAlign="middle" padded>
                                                 <Grid.Row>
                                                     <Input type="text"
-                                                           diagnosisIndex={diagnosisIndex}
-                                                           problemIndex={problemIndex}
+                                                           diagnosis_index={diagnosis_index}
+                                                           problem_index={problem_index}
                                                            placeholder="Enter Diagnosis..."
                                                            value={diagnosis.diagnosis}
                                                            onChange={diagnosisChange}/>
                                                     <Button
-                                                        onClick={() => toggleDisplay(problemIndex, diagnosisIndex)}
+                                                        onClick={() => toggleDisplay(problem_index, diagnosis_index)}
                                                         primary
                                                         size='tiny'>{(diagnosis.clinicalFeatures && diagnosis.firstOpen) || diagnosis.showDetail ? 'Hide ' : 'Show '}
                                                         Detail</Button>
@@ -153,13 +154,12 @@ export const Home = ({
                                                 <Grid.Column>
                                                     <List celled>
                                                         {diagnosis.clinicalFeatures && diagnosis.clinicalFeatures
-                                                        // .slice()
                                                             .slice(0, Math.ceil(diagnosis.clinicalFeatures.length / 2))
                                                             .map((feature, i) => {
                                                                 return <List.Item>
                                                                     <Checkbox
-                                                                        diagnosisIndex={diagnosisIndex}
-                                                                        problemIndex={problemIndex}
+                                                                        diagnosis_index={diagnosis_index}
+                                                                        problem_index={problem_index}
                                                                         name={`${i}_column1`}
                                                                         checked={diagnosis.checkBoxes[`${i}_column1`]}
                                                                         onClick={handleCheck}
@@ -177,8 +177,8 @@ export const Home = ({
                                                             .map((feature, i) => {
                                                                 return <List.Item>
                                                                     <Checkbox
-                                                                        diagnosisIndex={diagnosisIndex}
-                                                                        problemIndex={problemIndex}
+                                                                        diagnosis_index={diagnosis_index}
+                                                                        problem_index={problem_index}
                                                                         name={`${i}_column2`}
                                                                         checked={diagnosis.checkBoxes[`${i}_column2`]}
                                                                         onClick={handleCheck}
@@ -190,8 +190,8 @@ export const Home = ({
                                             </Grid>
                                             <Form>
                                                 <Form.TextArea onChange={onChangeFreeText}
-                                                               diagnosisIndex={diagnosisIndex}
-                                                               problemIndex={problemIndex}
+                                                               diagnosis_index={diagnosis_index}
+                                                               problem_index={problem_index}
                                                                placeholder='Other clinical features...'
                                                                value={diagnosis.freeText}/>
                                             </Form>
@@ -210,7 +210,7 @@ export const Home = ({
                                 ))}
                                 <Button name="addProblem"
                                         compact sizy="tiny"
-                                        problemIndex={problemIndex}
+                                        problem_index={problem_index}
                                         onClick={onClickAddDiagnosis}>
                                     Add Diagnosis
                                 </Button>

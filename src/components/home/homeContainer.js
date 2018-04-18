@@ -25,12 +25,12 @@ class HomeContainer extends React.Component {
     }
 
     handleClick = (event, payload) => {
-        if (this.state.activeList.includes(payload.problemIndex)) {
-            const index = this.state.activeList.indexOf(payload.problemIndex);
+        if (this.state.activeList.includes(payload.problem_index)) {
+            const index = this.state.activeList.indexOf(payload.problem_index);
 
             return this.setState({activeList: this.state.activeList.filter((x, i) => i !== index)})
         }
-        return this.setState({activeList: [...this.state.activeList, payload.problemIndex]})
+        return this.setState({activeList: [...this.state.activeList, payload.problem_index]})
 
     };
 

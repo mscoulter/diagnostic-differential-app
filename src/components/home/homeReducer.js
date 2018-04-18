@@ -17,7 +17,7 @@ import {
 
 const initialState = {
     problemList: [{
-        diagnosisList: [{}]
+        diagnosisList: []
     }],
 
 };
@@ -26,8 +26,8 @@ export default (state = initialState, action) => {
     let newProblemList;
     let diagnosis;
     let diagnosisList;
-    let diagnosisIndex;
-    let problemIndex;
+    let diagnosis_index;
+    let problem_index;
     switch (action.type) {
         case ADD_DIAGNOSIS:
             newProblemList = [...state.problemList];
@@ -55,8 +55,8 @@ export default (state = initialState, action) => {
             };
 
             newProblemList = [...state.problemList];
-            newProblemList[action.payload.problemIndex]
-                .diagnosisList[action.payload.diagnosisIndex] = data;
+            newProblemList[action.payload.problem_index]
+                .diagnosisList[action.payload.diagnosis_index] = data;
 
             return {
                 ...state,
@@ -65,8 +65,8 @@ export default (state = initialState, action) => {
 
         case CHECKBOX_CLICK:
             newProblemList = [...state.problemList];
-            newProblemList[action.payload.problemIndex]
-                .diagnosisList[action.payload.diagnosisIndex]
+            newProblemList[action.payload.problem_index]
+                .diagnosisList[action.payload.diagnosis_index]
                 .checkBoxes[action.payload.field] = action.payload.checked;
 
             return {
@@ -77,7 +77,7 @@ export default (state = initialState, action) => {
 
         case CHANGE_FREE_TEXT:
             newProblemList = [...state.problemList];
-            diagnosis = newProblemList[action.payload.problemIndex].diagnosisList[action.payload.diagnosisIndex];
+            diagnosis = newProblemList[action.payload.problem_index].diagnosisList[action.payload.diagnosis_index];
             diagnosis.freeText = action.payload.value;
 
             return {
@@ -88,10 +88,10 @@ export default (state = initialState, action) => {
 
         case MOVE_DIAGNOSIS_DOWN:
             newProblemList = [...state.problemList];
-            diagnosisIndex = action.payload.diagnosisIndex;
-            diagnosisList = newProblemList[action.payload.problemIndex].diagnosisList;
-            if(diagnosisList[diagnosisIndex+1]){
-                arrayMove(diagnosisList, diagnosisIndex, diagnosisIndex+1);
+            diagnosis_index = action.payload.diagnosis_index;
+            diagnosisList = newProblemList[action.payload.problem_index].diagnosisList;
+            if(diagnosisList[diagnosis_index+1]){
+                arrayMove(diagnosisList, diagnosis_index, diagnosis_index+1);
             }
 
             return {
@@ -102,10 +102,10 @@ export default (state = initialState, action) => {
 
         case MOVE_DIAGNOSIS_UP:
             newProblemList = [...state.problemList];
-            diagnosisIndex = action.payload.diagnosisIndex;
-            diagnosisList = newProblemList[action.payload.problemIndex].diagnosisList;
-            if(diagnosisList[diagnosisIndex-1]){
-                arrayMove(diagnosisList, diagnosisIndex, diagnosisIndex-1);
+            diagnosis_index = action.payload.diagnosis_index;
+            diagnosisList = newProblemList[action.payload.problem_index].diagnosisList;
+            if(diagnosisList[diagnosis_index-1]){
+                arrayMove(diagnosisList, diagnosis_index, diagnosis_index-1);
             }
 
             return {
@@ -116,9 +116,9 @@ export default (state = initialState, action) => {
 
         case MOVE_PROBLEM_DOWN:
             newProblemList = [...state.problemList];
-            problemIndex = action.payload.problemIndex;
-            if(newProblemList[problemIndex+1]){
-                arrayMove(newProblemList, problemIndex, problemIndex+1);
+            problem_index = action.payload.problem_index;
+            if(newProblemList[problem_index+1]){
+                arrayMove(newProblemList, problem_index, problem_index+1);
             }
 
             return {
@@ -129,9 +129,9 @@ export default (state = initialState, action) => {
 
         case MOVE_PROBLEM_UP:
             newProblemList = [...state.problemList];
-            problemIndex = action.payload.problemIndex;
-            if(newProblemList[problemIndex-1]){
-                arrayMove(newProblemList, problemIndex, problemIndex-1);
+            problem_index = action.payload.problem_index;
+            if(newProblemList[problem_index-1]){
+                arrayMove(newProblemList, problem_index, problem_index-1);
             }
 
             return {
@@ -142,7 +142,7 @@ export default (state = initialState, action) => {
 
         case PROBLEM_CHANGE:
             newProblemList = [...state.problemList];
-            newProblemList[action.payload.problemIndex][action.payload.problemName] = action.payload.value;
+            newProblemList[action.payload.problem_index][action.payload.problemName] = action.payload.value;
 
             return {
                 ...state,
@@ -152,7 +152,7 @@ export default (state = initialState, action) => {
 
         case REMOVE_DIAGNOSIS:
             newProblemList = [...state.problemList];
-            newProblemList[action.payload.problemIndex].diagnosisList.splice(action.payload.diagnosisIndex, 1);
+            newProblemList[action.payload.problem_index].diagnosisList.splice(action.payload.diagnosis_index, 1);
 
             return {
                 ...state,
@@ -161,7 +161,7 @@ export default (state = initialState, action) => {
 
         case REMOVE_PROBLEM:
             newProblemList = [...state.problemList];
-            newProblemList.splice(action.payload.problemIndex, 1);
+            newProblemList.splice(action.payload.problem_index, 1);
 
             return {
                 ...state,
@@ -170,7 +170,7 @@ export default (state = initialState, action) => {
 
         case TOGGLE_DISPLAY:
             newProblemList = [...state.problemList];
-            diagnosis = newProblemList[action.payload.problemIndex].diagnosisList[action.payload.diagnosisIndex];
+            diagnosis = newProblemList[action.payload.problem_index].diagnosisList[action.payload.diagnosis_index];
             diagnosis.firstOpen = false;
             diagnosis.showDetail = diagnosis.showDetail === undefined ? !diagnosis.clinicalFeatures : !diagnosis.showDetail;
 

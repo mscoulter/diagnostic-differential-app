@@ -19,7 +19,7 @@ export const TOGGLE_DISPLAY = 'toggle_display';
 export const addDiagnosis = (event, payload) => {
     return {
         type: ADD_DIAGNOSIS,
-        payload: payload.problemIndex
+        payload: payload.problem_index
     }
 };
 
@@ -36,8 +36,8 @@ export const changeFreeText = (event, payload) => {
     return {
         type: CHANGE_FREE_TEXT,
         payload: {
-            diagnosisIndex: payload.diagnosisIndex,
-            problemIndex: payload.problemIndex,
+            diagnosis_index: payload.diagnosis_index,
+            problem_index: payload.problem_index,
             value: payload.value
         }
     }
@@ -46,8 +46,8 @@ export const changeFreeText = (event, payload) => {
 
 export const diagnosisChange = (event, payload) => {
     const diagnosis = payload.value;
-    const diagnosisIndex = parseInt(payload.diagnosisIndex);
-    const problemIndex = parseInt(payload.problemIndex);
+    const diagnosis_index = parseInt(payload.diagnosis_index, 10);
+    const problem_index = parseInt(payload.problem_index, 10);
     const cleanText = formatText(diagnosis);
     let clinicalFeatures;
     let relatedDiagnoses;
@@ -74,8 +74,8 @@ export const diagnosisChange = (event, payload) => {
             diagnosis,
             checkBoxes,
             clinicalFeatures,
-            diagnosisIndex,
-            problemIndex,
+            diagnosis_index,
+            problem_index,
             relatedDiagnoses,
         }
     }
@@ -84,8 +84,8 @@ export const diagnosisChange = (event, payload) => {
 export const handleCheck = (event, payload) => {
 
     const boxValues = {
-        diagnosisIndex: payload.diagnosisIndex,
-        problemIndex: payload.problemIndex,
+        diagnosis_index: payload.diagnosis_index,
+        problem_index: payload.problem_index,
         field: payload.name,
         checked: payload.checked
     };
@@ -96,37 +96,37 @@ export const handleCheck = (event, payload) => {
 };
 
 export const moveDown = (event, payload) => {
-    if(payload.diagnosisIndex) {
+    if(payload.diagnosis_index) {
         return {
             type: MOVE_DIAGNOSIS_DOWN,
             payload: {
-                problemIndex: payload.problemIndex,
-                diagnosisIndex: payload.diagnosisIndex,
+                problem_index: payload.problem_index,
+                diagnosis_index: payload.diagnosis_index,
             }
         }
     }
     return {
         type: MOVE_PROBLEM_DOWN,
         payload: {
-            problemIndex: payload.problemIndex,
+            problem_index: payload.problem_index,
         }
     }
 };
 
 export const moveUp = (event, payload) => {
-    if(payload.diagnosisIndex) {
+    if(payload.diagnosis_index) {
         return {
             type: MOVE_DIAGNOSIS_UP,
             payload: {
-                problemIndex: payload.problemIndex,
-                diagnosisIndex: payload.diagnosisIndex,
+                problem_index: payload.problem_index,
+                diagnosis_index: payload.diagnosis_index,
             }
         }
     }
     return {
         type: MOVE_PROBLEM_UP,
         payload: {
-            problemIndex: payload.problemIndex,
+            problem_index: payload.problem_index,
         }
     }
 };
@@ -135,7 +135,7 @@ export const problemChange = (event, payload) => {
     return {
         type: PROBLEM_CHANGE,
         payload: {
-            problemIndex: payload.problemIndex,
+            problem_index: payload.problem_index,
             problemName: payload.name,
             value: payload.value,
         }
@@ -147,8 +147,8 @@ export const removeDiagnosis = (event, payload) => {
     return {
         type: REMOVE_DIAGNOSIS,
         payload: {
-            problemIndex: payload.problemIndex,
-            diagnosisIndex: payload.diagnosisIndex,
+            problem_index: payload.problem_index,
+            diagnosis_index: payload.diagnosis_index,
         }
     }
 };
@@ -158,18 +158,18 @@ export const removeProblem = (event, payload) => {
     return {
         type: REMOVE_PROBLEM,
         payload: {
-            problemIndex: payload.problemIndex,
+            problem_index: payload.problem_index,
         }
     }
 };
 
-export const toggleDisplay = (problemIndex, diagnosisIndex) => {
+export const toggleDisplay = (problem_index, diagnosis_index) => {
 
     return {
         type: TOGGLE_DISPLAY,
         payload: {
-            problemIndex,
-            diagnosisIndex
+            problem_index,
+            diagnosis_index
         }
     }
 };
