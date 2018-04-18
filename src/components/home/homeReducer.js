@@ -34,7 +34,6 @@ export default (state = initialState, action) => {
             newProblemList[action.payload].diagnosisList.push({});
 
             return {
-                ...state,
                 problemList: newProblemList
             };
         case ADD_PROBLEM:
@@ -42,7 +41,6 @@ export default (state = initialState, action) => {
             newProblemList.push({diagnosisList: []});
 
             return {
-                ...state,
                 problemList: newProblemList
             };
         case DIAGNOSIS_CHANGE:
@@ -59,7 +57,6 @@ export default (state = initialState, action) => {
                 .diagnosisList[action.payload.diagnosis_index] = data;
 
             return {
-                ...state,
                 problemList: newProblemList
             };
 
@@ -70,8 +67,7 @@ export default (state = initialState, action) => {
                 .checkBoxes[action.payload.field] = action.payload.checked;
 
             return {
-                ...state,
-                diagnosisList: newProblemList
+                problemList: newProblemList
 
             };
 
@@ -95,7 +91,6 @@ export default (state = initialState, action) => {
             }
 
             return {
-                ...state,
                 problemList: newProblemList
 
             };
@@ -109,7 +104,6 @@ export default (state = initialState, action) => {
             }
 
             return {
-                ...state,
                 problemList: newProblemList
 
             };
@@ -122,7 +116,6 @@ export default (state = initialState, action) => {
             }
 
             return {
-                ...state,
                 problemList: newProblemList
 
             };
@@ -135,7 +128,6 @@ export default (state = initialState, action) => {
             }
 
             return {
-                ...state,
                 problemList: newProblemList
 
             };
@@ -145,7 +137,6 @@ export default (state = initialState, action) => {
             newProblemList[action.payload.problem_index][action.payload.problemName] = action.payload.value;
 
             return {
-                ...state,
                 problemList: newProblemList
 
             };
@@ -155,7 +146,6 @@ export default (state = initialState, action) => {
             newProblemList[action.payload.problem_index].diagnosisList.splice(action.payload.diagnosis_index, 1);
 
             return {
-                ...state,
                 problemList: newProblemList
             };
 
@@ -164,7 +154,6 @@ export default (state = initialState, action) => {
             newProblemList.splice(action.payload.problem_index, 1);
 
             return {
-                ...state,
                 problemList: newProblemList
             };
 
@@ -175,7 +164,6 @@ export default (state = initialState, action) => {
             diagnosis.showDetail = diagnosis.showDetail === undefined ? !diagnosis.clinicalFeatures : !diagnosis.showDetail;
 
             return {
-                ...state,
                 problemList: newProblemList
 
             };
