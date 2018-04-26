@@ -31,7 +31,6 @@ export const addProblem = (event, payload) => {
     }
 };
 
-
 export const changeFreeText = (event, payload) => {
     return {
         type: CHANGE_FREE_TEXT,
@@ -58,7 +57,7 @@ export const diagnosisChange = (event, payload) => {
         clinicalFeatures = data[cleanText].clinical_features;
         relatedDiagnoses = data[cleanText].relatedDiagnoses;
         leftSymptoms = clinicalFeatures.slice().splice(0, Math.ceil(clinicalFeatures.length / 2));
-        rightSymptoms = clinicalFeatures.slice().splice(Math.floor(clinicalFeatures.length / 2) - (clinicalFeatures.length % 2 === 0 ? 3 : 2), clinicalFeatures.length);
+        rightSymptoms = clinicalFeatures.slice().splice(Math.floor(clinicalFeatures.length / 2) + !(clinicalFeatures.length % 2 === 0), clinicalFeatures.length);
         checkBoxes = {};
         leftSymptoms.forEach((symptom, index) => {
             checkBoxes[`${index}_column1`] = false;
@@ -96,7 +95,7 @@ export const handleCheck = (event, payload) => {
 };
 
 export const moveDown = (event, payload) => {
-    if(payload.diagnosis_index) {
+    if(payload.diagnosis_index!==null && payload.diagnosis_index!==undefined) {
         return {
             type: MOVE_DIAGNOSIS_DOWN,
             payload: {
@@ -114,7 +113,7 @@ export const moveDown = (event, payload) => {
 };
 
 export const moveUp = (event, payload) => {
-    if(payload.diagnosis_index) {
+    if(payload.diagnosis_index!==null && payload.diagnosis_index!==undefined) {
         return {
             type: MOVE_DIAGNOSIS_UP,
             payload: {

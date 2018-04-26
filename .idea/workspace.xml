@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoTestManager">
+    <enabled-run-configurations>
+      <run-configuration type="JavaScriptTestRunnerJest" name="homeActions.diagnosisChange.returns checkboxes split into two columns" />
+    </enabled-run-configurations>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9e847c5e-8a84-4820-99cd-1930b5556844" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/home/__tests__/home.test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/__mocks__/data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/homeReducer.js" afterPath="$PROJECT_DIR$/src/components/home/homeReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/helpers/formatHelper.js" afterPath="$PROJECT_DIR$/src/components/helpers/formatHelper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js" afterPath="$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/homeActions.js" afterPath="$PROJECT_DIR$/src/components/home/homeActions.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +23,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47610122">
+    <splitter split-orientation="horizontal" split-proportion="0.5082873">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
@@ -35,18 +41,18 @@
           <file leaf-file-name="homeContainer.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/home/homeContainer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+                <state relative-caret-position="-931">
+                  <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="homeActions.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="homeActions.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/home/homeActions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+                <state relative-caret-position="336">
+                  <caret line="170" column="52" lean-forward="false" selection-start-line="170" selection-start-column="52" selection-end-line="170" selection-end-column="52" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -54,11 +60,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="homeReducer.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="data.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/data.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="formatHelper.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/helpers/formatHelper.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="homeReducer.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/home/homeReducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1875">
-                  <caret line="167" column="0" lean-forward="true" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+                <state relative-caret-position="91">
+                  <caret line="159" column="27" lean-forward="false" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -80,14 +106,54 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="homeReducer.test.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="homeActions.test.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="224">
+                  <caret line="259" column="37" lean-forward="false" selection-start-line="259" selection-start-column="37" selection-end-line="259" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#0#502#0" expanded="true" />
+                    <element signature="e#897#984#0" expanded="false" />
+                    <element signature="e#1070#1280#0" expanded="false" />
+                    <element signature="e#1154#1225#0" expanded="false" />
+                    <element signature="e#1315#1534#0" expanded="false" />
+                    <element signature="e#1403#1479#0" expanded="false" />
+                    <element signature="e#1576#4146#0" expanded="false" />
+                    <element signature="e#1662#2359#0" expanded="false" />
+                    <element signature="e#1686#1813#0" expanded="false" />
+                    <element signature="e#1849#2104#0" expanded="false" />
+                    <element signature="e#2201#2296#0" expanded="false" />
+                    <element signature="e#2463#2902#0" expanded="false" />
+                    <element signature="e#2487#2622#0" expanded="false" />
+                    <element signature="e#3000#3508#0" expanded="false" />
+                    <element signature="e#3024#3159#0" expanded="false" />
+                    <element signature="e#3201#3360#0" expanded="false" />
+                    <element signature="e#3599#4137#0" expanded="false" />
+                    <element signature="e#3623#3752#0" expanded="false" />
+                    <element signature="e#3794#3989#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="homeReducer.test.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1324">
-                  <caret line="92" column="32" lean-forward="true" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+                <state relative-caret-position="-3873">
+                  <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="formatHelper.test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/helpers/__tests__/formatHelper.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -112,7 +178,6 @@
       <find>clinical</find>
       <find>clinicalFeature</find>
       <find>clinicalFeatures</find>
-      <find>toggleDisplay</find>
       <find>diver</find>
       <find>diagnosisChange</find>
       <find>remove</find>
@@ -121,8 +186,11 @@
       <find>diagnosisId</find>
       <find>diagnosisI</find>
       <find>diagnosisInde</find>
-      <find>diagnosisIndex</find>
       <find>problemIndex</find>
+      <find>diagnosisIndex</find>
+      <find>t</find>
+      <find>toggle</find>
+      <find>toggleDisplay</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -149,12 +217,17 @@
         <option value="$PROJECT_DIR$/src/data.js" />
         <option value="$PROJECT_DIR$/src/components/home/reducerHelper.js" />
         <option value="$PROJECT_DIR$/src/components/home/homeContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/home/homeActions.js" />
         <option value="$PROJECT_DIR$/src/components/home/home.js" />
-        <option value="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" />
         <option value="$PROJECT_DIR$/src/components/home/__tests__/home.test.js" />
         <option value="$PROJECT_DIR$/src/components/home/homeReducer.js" />
         <option value="$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js" />
+        <option value="$PROJECT_DIR$/src/components/home/__tests__/homeActions.js" />
+        <option value="$PROJECT_DIR$/src/components/home/__mocks__.js" />
+        <option value="$PROJECT_DIR$/src/components/home/__mocks__/data.js" />
+        <option value="$PROJECT_DIR$/src/__mocks__/data.js" />
+        <option value="$PROJECT_DIR$/src/components/helpers/formatHelper.js" />
+        <option value="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" />
+        <option value="$PROJECT_DIR$/src/components/home/homeActions.js" />
       </list>
     </option>
   </component>
@@ -228,147 +301,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__tests__" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__tests__" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diagnostic-differential-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="about" />
+              <option name="myItemId" value="__mocks__" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -389,6 +322,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/styles" />
       <recent name="$PROJECT_DIR$/src/containers/home" />
     </key>
@@ -405,63 +339,63 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.homeReducer.DIAGNOSIS_CHANGE">
-    <configuration default="false" name="formatText.should make entries lowercase, replace spaces with underscores, and remove apostrophes and dashes" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.homeActions.removeProblem">
+    <configuration default="false" name="homeActions.moveUp diagnosis" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/helpers/__tests__/formatHelper.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" />
       <test-names>
-        <test-name value="formatText" />
-        <test-name value="should make entries lowercase, replace spaces with underscores, and remove apostrophes and dashes" />
+        <test-name value="homeActions" />
+        <test-name value="moveUp diagnosis" />
       </test-names>
       <method />
     </configuration>
-    <configuration default="false" name="homeReducer" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="homeActions" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" />
       <test-names>
-        <test-name value="homeReducer" />
+        <test-name value="homeActions" />
       </test-names>
       <method />
     </configuration>
-    <configuration default="false" name="homeReducer.ADD_DIAGNOSIS" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="homeActions.problemChange" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" />
       <test-names>
-        <test-name value="homeReducer" />
-        <test-name value="ADD_DIAGNOSIS" />
+        <test-name value="homeActions" />
+        <test-name value="problemChange" />
       </test-names>
       <method />
     </configuration>
-    <configuration default="false" name="homeReducer.ADD_PROBLEM" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="homeActions.removeDiagnosis" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" />
       <test-names>
-        <test-name value="homeReducer" />
-        <test-name value="ADD_PROBLEM" />
+        <test-name value="homeActions" />
+        <test-name value="removeDiagnosis" />
       </test-names>
       <method />
     </configuration>
-    <configuration default="false" name="homeReducer.DIAGNOSIS_CHANGE" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="homeActions.removeProblem" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js" />
       <test-names>
-        <test-name value="homeReducer" />
-        <test-name value="DIAGNOSIS_CHANGE" />
+        <test-name value="homeActions" />
+        <test-name value="removeProblem" />
       </test-names>
       <method />
     </configuration>
@@ -852,19 +786,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Jest.formatText.should make entries lowercase, replace spaces with underscores, and remove apostrophes and dashes" />
-      <item index="1" class="java.lang.String" itemvalue="Jest.homeReducer" />
-      <item index="2" class="java.lang.String" itemvalue="Jest.homeReducer.ADD_DIAGNOSIS" />
-      <item index="3" class="java.lang.String" itemvalue="Jest.homeReducer.ADD_PROBLEM" />
-      <item index="4" class="java.lang.String" itemvalue="Jest.homeReducer.DIAGNOSIS_CHANGE" />
+      <item index="0" class="java.lang.String" itemvalue="Jest.homeActions.moveUp diagnosis" />
+      <item index="1" class="java.lang.String" itemvalue="Jest.homeActions" />
+      <item index="2" class="java.lang.String" itemvalue="Jest.homeActions.problemChange" />
+      <item index="3" class="java.lang.String" itemvalue="Jest.homeActions.removeDiagnosis" />
+      <item index="4" class="java.lang.String" itemvalue="Jest.homeActions.removeProblem" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Jest.homeReducer.DIAGNOSIS_CHANGE" />
-        <item index="1" class="java.lang.String" itemvalue="Jest.homeReducer.ADD_PROBLEM" />
-        <item index="2" class="java.lang.String" itemvalue="Jest.homeReducer.ADD_DIAGNOSIS" />
-        <item index="3" class="java.lang.String" itemvalue="Jest.homeReducer" />
-        <item index="4" class="java.lang.String" itemvalue="Jest.formatText.should make entries lowercase, replace spaces with underscores, and remove apostrophes and dashes" />
+        <item index="0" class="java.lang.String" itemvalue="Jest.homeActions.removeProblem" />
+        <item index="1" class="java.lang.String" itemvalue="Jest.homeActions.removeDiagnosis" />
+        <item index="2" class="java.lang.String" itemvalue="Jest.homeActions.problemChange" />
+        <item index="3" class="java.lang.String" itemvalue="Jest.homeActions" />
+        <item index="4" class="java.lang.String" itemvalue="Jest.homeActions.moveUp diagnosis" />
       </list>
     </recent_temporary>
   </component>
@@ -883,44 +817,44 @@
       <updated>1518907185554</updated>
       <workItem from="1520553568033" duration="35857000" />
       <workItem from="1521997803497" duration="18994000" />
-      <workItem from="1522193198257" duration="19020000" />
+      <workItem from="1522193198257" duration="37742000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="formatText_should_make_entries_lowercase,_replace_spaces_with_underscores,_and_remove_apostrophes_and_dashes - 2018.04.17 at 19h 19m 54s.xml">
-      <configuration name="formatText.should make entries lowercase, replace spaces with underscores, and remove apostrophes and dashes" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions - 2018.04.25 at 18h 49m 55s.xml">
+      <configuration name="homeActions" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer - 2018.04.17 at 20h 26m 03s.xml">
-      <configuration name="homeReducer" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions - 2018.04.25 at 18h 50m 53s.xml">
+      <configuration name="homeActions" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer_ADD_DIAGNOSIS - 2018.04.17 at 20h 26m 18s.xml">
-      <configuration name="homeReducer.ADD_DIAGNOSIS" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions_moveDown_problem - 2018.04.25 at 18h 46m 08s.xml">
+      <configuration name="homeActions.moveDown problem" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer_ADD_DIAGNOSIS - 2018.04.17 at 20h 26m 40s.xml">
-      <configuration name="homeReducer.ADD_DIAGNOSIS" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions_moveDown_problem - 2018.04.25 at 18h 48m 20s.xml">
+      <configuration name="homeActions.moveDown problem" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer_ADD_DIAGNOSIS - 2018.04.17 at 20h 26m 55s.xml">
-      <configuration name="homeReducer.ADD_DIAGNOSIS" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions_moveUp_diagnosis - 2018.04.25 at 18h 49m 05s.xml">
+      <configuration name="homeActions.moveUp diagnosis" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer_ADD_PROBLEM - 2018.04.17 at 20h 40m 46s.xml">
-      <configuration name="homeReducer.ADD_PROBLEM" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions_moveUp_diagnosis - 2018.04.25 at 18h 49m 28s.xml">
+      <configuration name="homeActions.moveUp diagnosis" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer_DIAGNOSIS_CHANGE - 2018.04.17 at 20h 46m 42s.xml">
-      <configuration name="homeReducer.DIAGNOSIS_CHANGE" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions_problemChange - 2018.04.25 at 18h 52m 37s.xml">
+      <configuration name="homeActions.problemChange" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer_DIAGNOSIS_CHANGE - 2018.04.17 at 20h 47m 03s.xml">
-      <configuration name="homeReducer.DIAGNOSIS_CHANGE" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions_removeDiagnosis - 2018.04.26 at 16h 33m 51s.xml">
+      <configuration name="homeActions.removeDiagnosis" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer_DIAGNOSIS_CHANGE - 2018.04.17 at 20h 48m 18s.xml">
-      <configuration name="homeReducer.DIAGNOSIS_CHANGE" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions_removeProblem - 2018.04.26 at 16h 34m 17s.xml">
+      <configuration name="homeActions.removeProblem" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="homeReducer_DIAGNOSIS_CHANGE - 2018.04.17 at 20h 49m 29s.xml">
-      <configuration name="homeReducer.DIAGNOSIS_CHANGE" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="homeActions_removeProblem - 2018.04.26 at 16h 34m 27s.xml">
+      <configuration name="homeActions.removeProblem" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73871000" />
+    <option name="totallyTimeSpent" value="92593000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="705" extended-state="6" />
@@ -935,12 +869,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5106036" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34910277" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1451876" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14681892" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13812602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12358643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -948,7 +882,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -999,7 +933,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1131,34 +1065,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="413" column="47" lean-forward="true" selection-start-line="413" selection-start-column="47" selection-end-line="413" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/home/reducerHelper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/homeContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/helpers/__tests__/formatHelper.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1169,16 +1079,6 @@
           <caret line="60" column="16" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/homeActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1201,20 +1101,106 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/home/homeReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="167" column="0" lean-forward="true" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+        <state relative-caret-position="91">
+          <caret line="159" column="27" lean-forward="false" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="27" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/__mocks__.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/helpers/formatHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__mocks__/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/helpers/__tests__/formatHelper.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/home/__tests__/homeReducer.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1324">
-          <caret line="92" column="32" lean-forward="true" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+        <state relative-caret-position="-3873">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/__tests__/homeActions.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="259" column="37" lean-forward="false" selection-start-line="259" selection-start-column="37" selection-end-line="259" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#502#0" expanded="true" />
+            <element signature="e#897#984#0" expanded="false" />
+            <element signature="e#1070#1280#0" expanded="false" />
+            <element signature="e#1154#1225#0" expanded="false" />
+            <element signature="e#1315#1534#0" expanded="false" />
+            <element signature="e#1403#1479#0" expanded="false" />
+            <element signature="e#1576#4146#0" expanded="false" />
+            <element signature="e#1662#2359#0" expanded="false" />
+            <element signature="e#1686#1813#0" expanded="false" />
+            <element signature="e#1849#2104#0" expanded="false" />
+            <element signature="e#2201#2296#0" expanded="false" />
+            <element signature="e#2463#2902#0" expanded="false" />
+            <element signature="e#2487#2622#0" expanded="false" />
+            <element signature="e#3000#3508#0" expanded="false" />
+            <element signature="e#3024#3159#0" expanded="false" />
+            <element signature="e#3201#3360#0" expanded="false" />
+            <element signature="e#3599#4137#0" expanded="false" />
+            <element signature="e#3623#3752#0" expanded="false" />
+            <element signature="e#3794#3989#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/homeContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-931">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/homeActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="170" column="52" lean-forward="false" selection-start-line="170" selection-start-column="52" selection-end-line="170" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

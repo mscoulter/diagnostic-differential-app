@@ -15,7 +15,7 @@ import {addDiagnosis,
 import {Home} from './home';
 
 
-class HomeContainer extends React.Component {
+export class HomeContainer extends React.Component {
 
     constructor(props) {
         super(props);
@@ -62,13 +62,13 @@ class HomeContainer extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
     return {
         problemList: state.homeReducer.problemList
     }
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({
+export const mapDispatchToProps = dispatch => bindActionCreators({
     addDiagnosis,
     addProblem,
     changeFreeText,
